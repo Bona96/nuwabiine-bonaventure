@@ -11,16 +11,16 @@ const Navbar = () => {
         <nav className='flex text-lg gap-7 font-medium'>
             <NavLink 
                 to="/about"
-                className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-700 dark:text-gray-300 hover:cyan-gradient_text transition-colors duration-300' }
+                className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-800 hover:cyan-gradient_text transition-colors duration-300' }
             >
                 About
             </NavLink>
-            <NavLink 
+            {/* <NavLink 
                 to="/portfolio"
                 className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-700 dark:text-gray-300 hover:cyan-gradient_text transition-colors duration-300' }
             >
                 Portfolio
-            </NavLink>
+            </NavLink> */}
         </nav>
     </header>
   )
