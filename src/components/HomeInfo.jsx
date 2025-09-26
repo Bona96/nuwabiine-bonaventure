@@ -17,7 +17,7 @@ const HomeInfo = ({ currentStage }) => {
           👋
           <br />
         </h1>
-        <p className="text-cyan-700 text-center" >A Web & Software Developer from Uganda 🇭🇷</p>
+        <p className="text-cyan-700 text-center" >A Web & Software Developer from Uganda</p>
       </div>
     );
 
