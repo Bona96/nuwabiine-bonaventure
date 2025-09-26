@@ -32,7 +32,7 @@ export const bio = {
         last: "Bonaventure"
     },
     title: "Web & Software Developer",
-    description: "I'm a Web & Software Developer based in Uganda 🇭🇷, specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building responsive full-stack web applications.",
+    description: "I'm a Web & Software Developer based in Uganda, specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building responsive full-stack web applications.",
     email: "mnuwabiine@gmail.com",
     phone: "+256 760 420 592",
     address: {
