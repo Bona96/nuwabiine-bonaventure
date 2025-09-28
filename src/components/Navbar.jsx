@@ -15,12 +15,12 @@ const Navbar = () => {
             >
                 About
             </NavLink>
-            {/* <NavLink 
+            <NavLink 
                 to="/portfolio"
                 className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-700 dark:text-gray-300 hover:cyan-gradient_text transition-colors duration-300' }
             >
                 Portfolio
-            </NavLink> */}
+            </NavLink>
         </nav>
     </header>
   )
