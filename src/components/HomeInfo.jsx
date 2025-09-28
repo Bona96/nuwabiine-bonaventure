@@ -3,16 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { arrow } from "../assets/icons";
 
 const HomeInfo = ({ currentStage }) => {
-  const navigate = useNavigate();
+  
   const hmInfoMainDiv = "p-5 rounded-md flex flex-col items-center bg-gray-400/50";
-  const nolink = (e) => {
-    e.preventDefault();
-    alert("Portfolio coming soon!");
-  }
-  const haslink = (e) => {
-    e.preventDefault();
-    navigate('/portfolio');
-  }
+  
   if (currentStage === 1)
     return (
       <div className={`${hmInfoMainDiv}`}>
@@ -47,7 +40,7 @@ const HomeInfo = ({ currentStage }) => {
           Led multiple projects to success over the years. <br /> Curious about the impact?
         </p>
 
-        <Link onClick={haslink} className='neo-brutalism-white neo-btn'>
+        <Link to='/portfolio' className='neo-brutalism-white neo-btn'>
           Visit my portfolio
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
