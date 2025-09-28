@@ -11,8 +11,7 @@ const HomeInfo = ({ currentStage }) => {
   }
   const haslink = (e) => {
     e.preventDefault();
-    navigate(`${e.target.href.split(window.location.origin)[1]}`);
-    console.log(`${e.target.href.split(window.location.origin)[1]}`);
+    navigate('/portfolio');
   }
   if (currentStage === 1)
     return (
