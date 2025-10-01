@@ -6,7 +6,7 @@ import { arrow } from "../assets/icons";
 
 const Portfolio = () => {
   return (
-    <section className='max-container'>
+    <section className='max-container bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500'>
       <h1 className='head-text'>
         My{" "}
         <span className='blue-gradient_text drop-shadow font-semibold'>
