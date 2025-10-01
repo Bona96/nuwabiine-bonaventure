@@ -1,44 +1,14 @@
 import { Suspense, useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { Canvas } from '@react-three/fiber'
 import { HomeInfo, Loader } from '../components/'
-
-import sakura from "../assets/sakura.mp3";
-import { soundoff, soundon } from "../assets/icons";
 import { Bird, FallingSnowLoop, Island, Plane, Sky } from "../models";
 import { useDarkMode } from "../context/DarkModeContext";
-
-// --- Custom Hook for Audio Logic (Efficiency & Cleanliness) ---
-const useBackgroundMusic = () => {
-  const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
-
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
-
-  useEffect(() => {
-    if (isPlayingMusic) {
-      // Use the promise returned by play() to catch errors
-      audioRef.current.play().catch(error => {
-        console.error("Audio playback failed:", error);
-        // Fallback or user notification if playback fails (e.g., due to browser restrictions)
-      });
-    } else {
-      audioRef.current.pause();
-    }
-
-    // Cleanup: pause audio when component unmounts
-    return () => {
-      audioRef.current.pause();
-    };
-  }, [isPlayingMusic]);
-
-  return { isPlayingMusic, setIsPlayingMusic };
-};
-// -----------------------------------------------------------------
+import { useAudio } from "../context/AudioContext";
+import { AudioToggle } from "../components/Buttons";
 
 const Home = () => {
   const { isDark } = useDarkMode();
-  const { isPlayingMusic, setIsPlayingMusic } = useBackgroundMusic();
+  const { isPlaying, setIsPlaying } = useAudio();
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
@@ -197,17 +167,7 @@ const Home = () => {
       </Canvas>
       
       {/* Toggle Music Button */}
-      {/* Moved the button outside the Canvas for simpler DOM interaction */}
-      <div className="absolute bottom-4 left-4 z-10">
-        <button
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          // Tailwind CSS classes for better dark mode aesthetics
-          className="p-3 rounded-full text-white bg-gray-900 dark:bg-white dark:text-gray-900 shadow-xl transition-colors duration-300 hover:bg-cyan-600 dark:hover:bg-cyan-300"
-          title={isPlayingMusic ? "Pause Music" : "Play Music"}
-        >
-          {isPlayingMusic ? <img src={soundon} alt="Sound On" className="w-6 h-6" /> : <img src={soundoff} alt="Sound Off" className="w-6 h-6" />}
-        </button>
-      </div>
+  <AudioToggle isPlayingMusic={isPlaying} setIsPlayingMusic={setIsPlaying} />
     </section>
   )
 }
