@@ -8,7 +8,7 @@ import { DarkModeToggle } from './Buttons';
 // import DarkModeToggle from './DarkModeToggle'; // Assuming this component exists
 
 // Define the component where your mobile menu is:
-const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
+const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
   // 1. Get the target DOM node
   const portalRoot = document.getElementById('portal-root');
 

@@ -6,10 +6,10 @@ export const DarkModeToggle = () => {
   return (
     <button
       onClick={() => toggleDark()}
-      className=" mt-2 mb-2 p-2 rounded-md text-gray-800 dark:text-white bg-gray-200 dark:bg-gray-600 hover:bg-cyan-800 dark:hover:bg-cyan-300 dark:hover:text-gray-800"
+      className="p-2 rounded-md text-gray-800 dark:text-white bg-gray-200/50 dark:bg-gray-600/50 hover:bg-cyan-800 dark:hover:bg-cyan-400 hover:text-gray-200 dark:hover:text-gray-800"
     >
       {/* {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />} */}
-      {isDark ? '🌙 Dark' : '☀️ Light'}
+      {isDark ? '☀️ Light' : '🌙 Dark'}
     </button>
   );
 };
