@@ -49,7 +49,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
                             Portfolio
                         </NavLink>
                     </nav>
-                    <hr className="border-2 w-full mt-5 mb-5  border-green-500 my-2" />
+                    <hr className="border-2 w-full mt-5 mb-5  border-cyan-500/50 dark:border-cyan-200/50 my-2" />
                     <DarkModeToggle/>
                 </div>
             </motion.div>
