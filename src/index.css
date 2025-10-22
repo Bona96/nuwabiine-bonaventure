@@ -13,6 +13,13 @@
   --green-rgb: 125 161 35;
 }
 
+
+/* html, body, #root {
+  padding: 0;
+  margin: 0;
+  height and overflow settings will be removed for global use
+} */
+
 body {
   font-family: "Work Sans", sans-serif;
 }
@@ -110,7 +117,6 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta-text {
-    color: #000; /* text-black */
     font-weight: 800; /* font-extrabold */
     flex: 1;
     font-size: 1.875rem; /* text-3xl */

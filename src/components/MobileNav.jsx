@@ -26,7 +26,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className={`ml-64 lg:hidden right-0 fixed inset-0 z-[999] bg-gray-200 dark:bg-gray-800 p-2`}
+                className={`w-[500px] lg:hidden left-0 fixed inset-0 z-[999] bg-gray-200 dark:bg-gray-800 p-2 `}
             >
                 <div className={`flex flex-col items-center p-4 gap-4`}>
                     <div className="flex text-gray-800 dark:text-gray-200/60 justify-between w-full sm:ml-4 items-center mb-10">
@@ -43,10 +43,22 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
                             About
                         </NavLink>
                         <NavLink 
+                            to="/academics"
+                            className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-800 dark:text-gray-200 hover:text-cyan-600 transition-colors duration-300' }
+                        >
+                            Academics
+                        </NavLink>
+                        <NavLink 
                             to="/portfolio"
                             className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-800 dark:text-gray-200 hover:text-cyan-600 transition-colors duration-300' }
                         >
                             Portfolio
+                        </NavLink>
+                        <NavLink 
+                            to="/contact"
+                            className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-gray-800 dark:text-gray-200 hover:text-cyan-600 transition-colors duration-300' }
+                        >
+                            Contact
                         </NavLink>
                     </nav>
                     <hr className="border-2 w-full mt-5 mb-5  border-cyan-500/50 dark:border-cyan-200/50 my-2" />

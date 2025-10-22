@@ -9,11 +9,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 // 1. Define the Navigation Links data structure
 const NAV_LINKS = [
     { to: "/about", label: "About" },
+    { to: "/academics", label: "Academics" },
     { to: "/portfolio", label: "Portfolio" },
     { to: "/contact", label: "Contact" }, // Added 'Contact' for completeness
 ];
 
-const Navbar = () => {
+const Navbar = ({width=10, height=10}) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     
     // --- UX Improvement: Disable body scroll when mobile menu is open ---
@@ -38,14 +39,19 @@ const Navbar = () => {
 
     return (
         // The main header should likely use `flex justify-between` to separate the logo and the nav elements
-        <header className="header flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-6 z-20">
+        <header className="header relative flex items-center justify-between w-full p-4 bg-gray-100 dark:bg-gray-900 shadow-md z-50">
             
             {/* Logo/Brand Link */}
             <NavLink
                 to="/"
                 className="w-auto h-10 rounded-lg bg-white dark:bg-gray-800 items-center justify-center flex font-bold shadow-md px-4"
             >
-                <p className='blue-gradient_text text-xl'>NMB</p>
+                {/* <p className='blue-gradient_text text-xl'>NMB</p> */}
+                <img 
+                    src="/nuwabiine-logo-transparent.png" 
+                    alt="Logo" 
+                    className={`w-${width} h-${height} ml-2`}
+                />
             </NavLink>
 
             {/* Desktop Navigation (Dynamic) */}
@@ -72,7 +78,7 @@ const Navbar = () => {
             >
                 {/* Use Lucide icons: X when open, Menu when closed */}
                 {isMobileMenuOpen ? (
-                    <X className="w-6 h-6" />
+                    ''
                 ) : (
                     <Menu className="w-6 h-6" />
                 )}

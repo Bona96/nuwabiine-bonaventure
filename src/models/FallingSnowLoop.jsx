@@ -13,8 +13,8 @@ import fallingSnowLoopScene from "../assets/3d/falling_snow_loop.glb";
 //
 // The snow needs to be large enough to surround the island.
 // -------------------------------------------------------------
-const SNOW_SCALE = [100, 100, 100]; // Significantly larger scale
-const SNOW_POSITION = [0, 0, 0];    // Centered, as the environment
+const SNOW_SCALE = [10, 20, 10]; // Significantly larger scale
+const SNOW_POSITION = [0, -35, 0];    // Centered, as the environment
 
 export const FallingSnowLoop = ({ isRotating, ...props }) => {
     const group = useRef();
@@ -31,10 +31,10 @@ export const FallingSnowLoop = ({ isRotating, ...props }) => {
         // Assume the animation is named 'Animation' or 'Snow_Loop' 
         // You might need to check your model's exact animation name.
         const animationName = Object.keys(actions)[0]; 
-
+        console.log(actions)
         if (animationName) {
             actions[animationName].play();
-            actions[animationName].setEffectiveTimeScale(1); // Set speed if needed
+            actions[animationName].setEffectiveTimeScale(0.5); // Set speed if needed
             actions[animationName].loop = true; // Ensure it loops
         }
 

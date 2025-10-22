@@ -95,15 +95,15 @@ const Home = () => {
 
 
   return (
-    <section className='w-full h-screen relative'>
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+    <section className='relative w-full h-screen overflow-hidden'>
+      <div className='fixed top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       
       {/* 3D Section */}
       <Canvas 
-        className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
-        camera={{ near: 0.1, far: 1000 }}
+        className={`relative w-full bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
+        camera={{ near: 0.1, far: 1000}}
       >
         <Suspense fallback={<Loader />}>
           {/* Main Lights */}
@@ -141,13 +141,11 @@ const Home = () => {
           />
           {/* Bird starts */}
           <Bird />
-          
           {/* Dynamic Sky/Environment Model based on Dark Mode */}
           {isDark 
-            ? <FallingSnowLoop isRotating={isRotating} /> // Night/Dark environment
+            ? (<FallingSnowLoop isRotating={isRotating} />) // Night/Dark environment
             : <Sky isRotating={isRotating} /> // Day/Light environment
           }
-          
           {/* 3D Models with responsive adjustments */}
           <Island
             isRotating={isRotating}
@@ -167,7 +165,7 @@ const Home = () => {
       </Canvas>
       
       {/* Toggle Music Button */}
-  <AudioToggle isPlayingMusic={isPlaying} setIsPlayingMusic={setIsPlaying} />
+      <AudioToggle isPlayingMusic={isPlaying} setIsPlayingMusic={setIsPlaying} />
     </section>
   )
 }

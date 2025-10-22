@@ -27,6 +27,7 @@ import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 import stethoscope from './stethoscope-icon.svg'
+import youtube from './youtube.svg'
 
 export {
     css,
@@ -57,5 +58,6 @@ export {
     contact,
     soundon,
     soundoff,
-    stethoscope
+    stethoscope,
+    youtube
 }

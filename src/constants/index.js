@@ -24,7 +24,8 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    youtube
 } from "../assets/icons";
 
 export const bio = {
@@ -33,7 +34,7 @@ export const bio = {
         last: "Bonaventure"
     },
     title: "Web & Software Developer",
-    description: "I'm a Web & Software Developer based in Uganda, specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building responsive full-stack web applications.",
+    description: "A results-driven Full Stack Developer from Uganda - specializing in the modern JavaScript ecosystem, focused on architecting and deploying dynamic, high-performance web and mobile applications.",
     email: "mnuwabiine@gmail.com",
     phone: "+256 760 420 592",
     address: {
@@ -189,12 +190,17 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/knihttechnologies',
+        link: 'https://github.com/Bona96',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/nuwabiine-bonaventure',
+    },
+    {
+        name: 'YouTube',
+        iconUrl: youtube,
+        link: 'https://www.youtube.com/channel/UC35EQJomaJ3nkAAwUvSxbfg',
     }
 ];
 
@@ -221,3 +227,44 @@ export const projects = [
         link: 'https://github.com/',
     }
 ];
+
+// Centralized theme and styling for the app
+
+export const themes = {
+  default: {
+    primary: 'bg-blue-600 text-white',
+    secondary: 'bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-300',
+    accent: 'bg-cyan-200/50 dark:bg-gray-800/50',
+    border: 'border-blue-100 dark:border-blue-900',
+    card: 'rounded-2xl shadow-xl p-6',
+    button: 'px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200',
+    link: 'text-cyan-700 dark:text-cyan-300 underline hover:text-cyan-500',
+    tableHead: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300',
+    tableRow: 'border-t border-blue-100 dark:border-blue-900 hover:bg-blue-50 dark:hover:bg-blue-950',
+    excerpt: 'text-slate-500 dark:text-slate-400',
+  },
+  theme1: {
+    primary: 'bg-purple-600 text-white',
+    secondary: 'bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-300',
+    accent: 'bg-purple-200/50 dark:bg-gray-800/50',
+    border: 'border-purple-100 dark:border-purple-900',
+    card: 'rounded-2xl shadow-xl p-6',
+    button: 'px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200',
+    link: 'text-purple-700 dark:text-purple-300 underline hover:text-purple-500',
+    tableHead: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300',
+    tableRow: 'border-t border-purple-100 dark:border-purple-900 hover:bg-purple-50 dark:hover:bg-purple-950',
+    excerpt: 'text-slate-500 dark:text-slate-400',
+  },
+  theme2: {
+    primary: 'bg-green-600 text-white',
+    secondary: 'bg-white dark:bg-gray-900 text-green-600 dark:text-green-300',
+    accent: 'bg-green-200/50 dark:bg-gray-800/50',
+    border: 'border-green-100 dark:border-green-900',
+    card: 'rounded-2xl shadow-xl p-6',
+    button: 'px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200',
+    link: 'text-green-700 dark:text-green-300 underline hover:text-green-500',
+    tableHead: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300',
+    tableRow: 'border-t border-green-100 dark:border-green-900 hover:bg-green-50 dark:hover:bg-green-950',
+    excerpt: 'text-slate-500 dark:text-slate-400',
+  },
+};

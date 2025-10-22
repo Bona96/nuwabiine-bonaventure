@@ -1,8 +1,3 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-
 import { CTA } from "../components";
 import { bio, experiences, skills } from "../constants";
 
