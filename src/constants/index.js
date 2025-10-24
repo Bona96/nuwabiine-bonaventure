@@ -232,9 +232,9 @@ export const projects = [
 
 export const themes = {
   default: {
-    primary: 'bg-blue-600 text-white',
-    secondary: 'bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-300',
-    accent: 'bg-cyan-200/50 dark:bg-gray-800/50',
+    primary: 'bg-cyan-500 text-gray-200',
+    secondary: 'bg-gray-200 dark:bg-gray-800 text-cyan-500 dark:text-cyan-200',
+    accent: 'bg-cyan-200/50 dark:bg-cyan-800/50',
     border: 'border-blue-100 dark:border-blue-900',
     card: 'rounded-2xl shadow-xl p-6',
     button: 'px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200',

@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 
 import { socialLinks } from "../constants";
 
-const Footer = () => {
+const Footer = ({ isHome, setIsHome }) => {
   return (
-    <footer className='footer font-poppins px-6 md:px-16 lg:px-32 py-10 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 flex flex-col gap-6'>
-      <hr className='border-slate-200' />
-
+    <footer className={`${isHome ? '': 'mt-10'} flex flex-col gap-6 rounded border-2 border-cyan-500 hover:border-cyan-700 footer font-poppins p-2 md:p-4 lg:p-2 text-gray-800 dark:text-gray-200`}>
       <div className='footer-container flex '>
         <p className='text-center text-sm'>
           © 2025 <strong>Nuwabiine Mbiine</strong>. All rights reserved.

@@ -3,16 +3,14 @@ import { Canvas } from '@react-three/fiber'
 import { HomeInfo, Loader } from '../components/'
 import { Bird, FallingSnowLoop, Island, Plane, Sky } from "../models";
 import { useDarkMode } from "../context/DarkModeContext";
-import { useAudio } from "../context/AudioContext";
-import { AudioToggle } from "../components/Buttons";
 
-const Home = () => {
+
+const Home = ({ isHome, setIsHome }) => {
   const { isDark } = useDarkMode();
-  const { isPlaying, setIsPlaying } = useAudio();
-
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
 
+  if (!isHome) setIsHome(true);
   // --- Efficiency: Use useCallback for stable function references ---
   const adjustBiplaneForScreenSize = useCallback(() => {
     let screenScale, screenPosition;
@@ -83,7 +81,7 @@ const Home = () => {
   const [biplaneScale, biplanePosition] = useMemo(() => adjustBiplaneForScreenSize(), [adjustBiplaneForScreenSize]);
   const [islandScale, islandPosition] = useMemo(() => adjustIslandForScreenSize(), [adjustIslandForScreenSize]);
   // -----------------------------------------------------------------
-  
+
   // --- Dark Mode Enhancement: Adjust hemisphere light colors based on theme ---
   // A light sky/dark ground for a day scene. A darker sky/ground for a night scene.
   const hemisphereLightProps = useMemo(() => ({
@@ -95,14 +93,14 @@ const Home = () => {
 
 
   return (
-    <section className='relative w-full h-screen overflow-hidden'>
+    <section className='relative w-full h-screen'>
       <div className='fixed top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       
       {/* 3D Section */}
       <Canvas 
-        className={`relative w-full bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{ near: 0.1, far: 1000}}
       >
         <Suspense fallback={<Loader />}>
@@ -143,7 +141,7 @@ const Home = () => {
           <Bird />
           {/* Dynamic Sky/Environment Model based on Dark Mode */}
           {isDark 
-            ? (<FallingSnowLoop isRotating={isRotating} />) // Night/Dark environment
+            ? <FallingSnowLoop isRotating={isRotating} /> // Night/Dark environment
             : <Sky isRotating={isRotating} /> // Day/Light environment
           }
           {/* 3D Models with responsive adjustments */}
@@ -163,9 +161,6 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-      
-      {/* Toggle Music Button */}
-      <AudioToggle isPlayingMusic={isPlaying} setIsPlayingMusic={setIsPlaying} />
     </section>
   )
 }

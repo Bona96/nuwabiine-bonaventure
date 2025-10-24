@@ -39,7 +39,7 @@ const Navbar = ({width=10, height=10}) => {
 
     return (
         // The main header should likely use `flex justify-between` to separate the logo and the nav elements
-        <header className="header relative flex items-center justify-between w-full p-4 bg-gray-100 dark:bg-gray-900 shadow-md z-50">
+        <header className="header">
             
             {/* Logo/Brand Link */}
             <NavLink

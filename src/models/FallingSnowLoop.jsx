@@ -13,7 +13,7 @@ import fallingSnowLoopScene from "../assets/3d/falling_snow_loop.glb";
 //
 // The snow needs to be large enough to surround the island.
 // -------------------------------------------------------------
-const SNOW_SCALE = [10, 20, 10]; // Significantly larger scale
+const SNOW_SCALE = [50, 60, 50]; // Significantly larger scale
 const SNOW_POSITION = [0, -35, 0];    // Centered, as the environment
 
 export const FallingSnowLoop = ({ isRotating, ...props }) => {

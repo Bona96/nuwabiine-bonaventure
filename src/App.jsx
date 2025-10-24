@@ -3,19 +3,31 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { About, Academics, Contact, Home, Portfolio } from './pages'
 import Navbar from './components/Navbar'
 import { Footer } from './components'
+import { useAudio } from './context/AudioContext'
+import { AudioToggle } from './components/Buttons'
+import { useSite } from './context/SiteContext'
+import Layout from './layout/Layout'
+
 
 const App = () => {
+  const {isHome, setIsHome} = useSite();
+  const { isPlaying, setIsPlaying } = useAudio();
   return (
-    <main className='bg-slate-300 dark:bg-gray-900 transition-colors duration-500 h-[100vh] flex flex-col justify-between'>
+    <main>
       <Navbar />
+      <Routes>
+        <Route path="/" element={<Home isHome={isHome} setIsHome={setIsHome} />} />
+      </Routes>
+      <Layout>
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/academics" element={<Academics />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/academics" element={<Academics />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-      <Footer />
+      </Layout>
+      <Footer isHome={isHome} setIsHome={setIsHome}/>
+      <AudioToggle isPlayingMusic={isPlaying} setIsPlayingMusic={setIsPlaying} />
     </main>
   )
 }

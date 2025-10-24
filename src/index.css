@@ -14,11 +14,11 @@
 }
 
 
-/* html, body, #root {
+html, body, #root {
   padding: 0;
   margin: 0;
-  height and overflow settings will be removed for global use
-} */
+  /* height and overflow settings will be removed for global use */
+}
 
 body {
   font-family: "Work Sans", sans-serif;
@@ -62,11 +62,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto fixed top-0 bg-transparent z-10 right-0 left-0;
   }
 
   .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
+    @apply max-w-5xl mx-auto sm:p-2 p-6 flex flex-col gap-7;
   }
 
   .footer-container {
@@ -213,4 +213,20 @@ body:has(.card[data-color="green"]:hover) {
 
 .block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+/* Customize the entire scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Customize the scrollbar track (the background) */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: theme('colors.cyan.200'); /* Use Tailwind's color system */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme('colors.cyan.500'); /* Use Tailwind's color system */
+    border-radius: 4px; /* Add rounded corners */
 }

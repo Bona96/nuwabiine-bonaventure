@@ -136,7 +136,7 @@ const Academics = () => {
           ))}
         </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="">
           <table className={`min-w-full rounded-xl shadow-xl ${theme.border}`}>
             <thead>
               <tr className={theme.tableHead}>
