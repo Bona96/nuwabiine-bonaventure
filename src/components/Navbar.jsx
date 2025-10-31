@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'; // Import Lucide icons for mobile menu
 import { DarkModeToggle } from './Buttons';
 import MobileNav from './MobileNav'; // Assuming MobileNav is handled separately
-import { motion, AnimatePresence } from 'framer-motion';
+import { FloatingDockComponent } from './FloatingDock';
 
 // 1. Define the Navigation Links data structure
 const NAV_LINKS = [
@@ -56,15 +56,7 @@ const Navbar = ({width=10, height=10}) => {
 
             {/* Desktop Navigation (Dynamic) */}
             <nav className='hidden lg:flex items-center space-x-6 text-md font-medium'>
-                {NAV_LINKS.map((link) => (
-                    <NavLink 
-                        key={link.to} 
-                        to={link.to}
-                        className={navLinkClasses}
-                    >
-                        {link.label}
-                    </NavLink>
-                ))}
+                <FloatingDockComponent />
                 
                 {/* Dark Mode Toggle is a separate component */}
                 <DarkModeToggle />
