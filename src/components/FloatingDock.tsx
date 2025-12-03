@@ -1,13 +1,8 @@
-import React from "react";
-import { FloatingDock } from "../components/ui/floating-dock";
+import { FloatingDock } from "./ui/floating-dock.tsx";
 import {
   IconBrandGithub,
   IconBrandX,
-  IconBook2,
-  IconExchange,
   IconHome,
-  IconNewSection,
-  IconTerminal2,
   IconBook,
   IconUser,
   IconUserCheck,
