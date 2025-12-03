@@ -1,9 +1,15 @@
-import { Suspense, useEffect, useRef, useState, useMemo, useCallback } from "react";
-import { Canvas } from '@react-three/fiber'
-import { HomeInfo, Loader } from '../components/'
+import {
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
+import { Canvas } from "@react-three/fiber";
+import { HomeInfo, Loader } from "../components/";
 import { Bird, FallingSnowLoop, Island, Plane, Sky } from "../models";
 import { useDarkMode } from "../context/DarkModeContext";
-
 
 const Home = ({ isHome, setIsHome }) => {
   const { isDark } = useDarkMode();
@@ -49,13 +55,13 @@ const Home = ({ isHome, setIsHome }) => {
         ambientIntensity: 0.1, // Much lower ambient light
         directionalPosition: [1, 5, 1],
         directionalIntensity: 0.8, // Reduced intensity (Moonlight)
-        directionalColor: '#a0a8ff', // Cool blue for moonlight
+        directionalColor: "#a0a8ff", // Cool blue for moonlight
 
         pointPosition: [10, 5, 10],
         pointIntensity: 0.1, // Point lights are almost off unless they represent a glow
 
-        hemisphereSky: '#1a202c', // Dark blue sky
-        hemisphereGround: '#3b4252', // Darker ground
+        hemisphereSky: "#1a202c", // Dark blue sky
+        hemisphereGround: "#3b4252", // Darker ground
         hemisphereIntensity: 0.5, // Reduced hemisphere light
       };
     } else {
@@ -64,13 +70,13 @@ const Home = ({ isHome, setIsHome }) => {
         ambientIntensity: 0.5,
         directionalPosition: [1, 1, 1],
         directionalIntensity: 2,
-        directionalColor: '#ffffff', // White for sunlight
+        directionalColor: "#ffffff", // White for sunlight
 
         pointPosition: [10, 5, 10],
         pointIntensity: 2,
 
-        hemisphereSky: '#b1e1ff', // Light blue sky
-        hemisphereGround: '#000000', // Black ground
+        hemisphereSky: "#b1e1ff", // Light blue sky
+        hemisphereGround: "#000000", // Black ground
         hemisphereIntensity: 1,
       };
     }
@@ -78,49 +84,59 @@ const Home = ({ isHome, setIsHome }) => {
   // -----------------------------------------------------------------
 
   // --- Efficiency: Use useMemo to calculate values only once or when dependencies change (though dependencies are static here) ---
-  const [biplaneScale, biplanePosition] = useMemo(() => adjustBiplaneForScreenSize(), [adjustBiplaneForScreenSize]);
-  const [islandScale, islandPosition] = useMemo(() => adjustIslandForScreenSize(), [adjustIslandForScreenSize]);
+  const [biplaneScale, biplanePosition] = useMemo(
+    () => adjustBiplaneForScreenSize(),
+    [adjustBiplaneForScreenSize]
+  );
+  const [islandScale, islandPosition] = useMemo(
+    () => adjustIslandForScreenSize(),
+    [adjustIslandForScreenSize]
+  );
   // -----------------------------------------------------------------
 
   // --- Dark Mode Enhancement: Adjust hemisphere light colors based on theme ---
   // A light sky/dark ground for a day scene. A darker sky/ground for a night scene.
-  const hemisphereLightProps = useMemo(() => ({
-    skyColor: isDark ? '#1a202c' : '#b1e1ff', // Darker sky for night
-    groundColor: isDark ? '#3b4252' : '#000000', // Darker ground for night
-    intensity: isDark ? 0.75 : 1, // Slightly less intense light for night
-  }), [isDark]);
+  const hemisphereLightProps = useMemo(
+    () => ({
+      skyColor: isDark ? "#1a202c" : "#b1e1ff", // Darker sky for night
+      groundColor: isDark ? "#3b4252" : "#000000", // Darker ground for night
+      intensity: isDark ? 0.75 : 1, // Slightly less intense light for night
+    }),
+    [isDark]
+  );
   // -----------------------------------------------------------------
 
-
   return (
-    <section className='relative w-full h-screen'>
-      <div className='fixed top-28 left-0 right-0 z-10 flex items-center justify-center'>
+    <section className="w-full h-screen relative">
+      <div className="absolute top-48 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
-      
+
       {/* 3D Section */}
-      <Canvas 
-        className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
-        camera={{ near: 0.1, far: 1000}}
+      <Canvas
+        className={`w-full h-screen bg-transparent ${
+          isRotating ? "cursor-grabbing" : "cursor-grab"
+        }`}
+        camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
           {/* Main Lights */}
           {/* DIRECTIONAL LIGHT (Sun/Moon) */}
-          <directionalLight 
-            position={lighting.directionalPosition} 
-            intensity={lighting.directionalIntensity} 
+          <directionalLight
+            position={lighting.directionalPosition}
+            intensity={lighting.directionalIntensity}
             color={lighting.directionalColor} // New: Dynamic Color
           />
-          
+
           {/* AMBIENT LIGHT (General Fill Light) */}
           <ambientLight intensity={lighting.ambientIntensity} />
-          
+
           {/* POINT LIGHT (Localized Glow) */}
-          <pointLight 
-            position={lighting.pointPosition} 
-            intensity={lighting.pointIntensity} 
+          <pointLight
+            position={lighting.pointPosition}
+            intensity={lighting.pointIntensity}
           />
-          
+
           {/* HEMISPHERE LIGHT (Sky and Ground color influence) */}
           <hemisphereLight
             skyColor={lighting.hemisphereSky}
@@ -140,9 +156,12 @@ const Home = ({ isHome, setIsHome }) => {
           {/* Bird starts */}
           <Bird />
           {/* Dynamic Sky/Environment Model based on Dark Mode */}
-          {isDark 
-            ? <FallingSnowLoop isRotating={isRotating} /> // Night/Dark environment
-            : <Sky isRotating={isRotating} /> // Day/Light environment
+          {
+            isDark ? (
+              <FallingSnowLoop isRotating={isRotating} /> // Night/Dark environment
+            ) : (
+              <Sky isRotating={isRotating} />
+            ) // Day/Light environment
           }
           {/* 3D Models with responsive adjustments */}
           <Island
@@ -162,7 +181,7 @@ const Home = ({ isHome, setIsHome }) => {
         </Suspense>
       </Canvas>
     </section>
-  )
-}
+  );
+};
 
 export default Home;

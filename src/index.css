@@ -46,14 +46,6 @@
   --sidebar-ring: oklch(0.709 0.01 56.259);
 }
 
-html, body, #root {
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-}
-
 body {
   font-family: "Work Sans", sans-serif;
 }
@@ -68,7 +60,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 pt-[126px]! px-8 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -79,8 +71,8 @@ body:has(.card[data-color="green"]:hover) {
     @apply font-semibold sm:text-3xl text-xl relative font-poppins;
   }
 
-  .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  .blue-linear_text {
+    @apply bg-linear-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
   }
 
   .input {
@@ -92,7 +84,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+    @apply text-white bg-linear-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
   }
 
   .header {
@@ -108,7 +100,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl bg-neo-brutalism-blue pt-4 pb-12 px-8;
+    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl bg-neo-brutalism-blue p-4;
   }
 
   .neo-btn {
@@ -199,31 +191,31 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .block-container .btn-back-red {
-  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
+  background: linear-linear(135deg, #ff4b1f -20%, #ff9068 120%);
 }
 
 .block-container .btn-back-green {
-  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
+  background: linear-linear(135deg, #adfda2 -20%, #11d3f3 120%);
 }
 
 .block-container .btn-back-yellow {
-  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
+  background: linear-linear(135deg, #f7971e -20%, #ffd200 120%);
 }
 
 .block-container .btn-back-blue {
-  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+  background: linear-linear(135deg, #0061ff -20%, #60efff 120%);
 }
 
 .block-container .btn-back-orange {
-  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+  background: linear-linear(135deg, #ff0f7b -20%, #f89b29 120%);
 }
 
 .block-container .btn-back-pink {
-  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+  background: linear-linear(135deg, #e81cff -20%, #40c9ff 120%);
 }
 
 .block-container .btn-back-black {
-  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+  background: linear-linear(135deg, #0a1647 -20%, #e4e7e4 120%);
 }
 
 .block-container .btn-front {
@@ -251,7 +243,7 @@ body:has(.card[data-color="green"]:hover) {
 
 /* Customize the entire scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
-    width: 8px; /* Set the width of the scrollbar */
+  width: 8px; /* Set the width of the scrollbar */
 }
 
 /* Customize the scrollbar track (the background) */
@@ -335,13 +327,4 @@ body:has(.card[data-color="green"]:hover) {
   --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }

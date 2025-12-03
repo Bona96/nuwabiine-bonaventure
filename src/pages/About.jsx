@@ -59,8 +59,8 @@ const ExperienceCard = ({ experience }) => (
 
 const About = () => {
   return (
-    <section className="max-container bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500">
-      <h1 className="head-text">
+    <section className="flex flex-col p-12 text-center w-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500">
+      <h1 className="">
         Hello, I'm{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
           {" "}
@@ -115,11 +115,14 @@ const About = () => {
         </div>
 
         {/* The custom timeline structure */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-12 flex justify-center items-">
           <div className="relative max-w-4xl w-full">
             {experiences.map((experience, index) => (
               // Use the new ExperienceCard component
-              <ExperienceCard key={experience.company_name} experience={experience} />
+              <ExperienceCard
+                key={experience.company_name}
+                experience={experience}
+              />
             ))}
           </div>
         </div>

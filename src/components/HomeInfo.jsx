@@ -73,7 +73,7 @@ const HomeInfo = ({ currentStage }) => {
 
       {/* Always render the paragraph */}
       <p className={`${ptextClassName}`}>
-  {     content.paragraph} <Uganda className="inline-block w-6 h-4 ml-2" title="Uganda" />
+        {content.paragraph} <Uganda className="inline-block w-6 h-4 ml-2" title="Uganda" />
       </p>
 
       {/* Conditionally render the dynamic link */}

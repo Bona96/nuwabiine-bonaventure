@@ -5,7 +5,6 @@ import Modal from '../components/Modal';
 
 import heroImg from '../assets/images/hero.jpg';
 import metaImg from '../assets/images/meta.png';
-import shopifyImg from '../assets/images/shopify.png';
 import reactessntialscertificateImg from '../assets/images/react-essentials-training.png';
 
 const academics = [
@@ -42,7 +41,6 @@ const academics = [
   },
 ];
 
-
 const excerpt = (text, len = 80) => text.length > len ? text.slice(0, len) + '...' : text;
 
 const Academics = () => {
@@ -57,7 +55,7 @@ const Academics = () => {
   };
 
   return (
-    <section className={`max-container p-4 bg-gradient-to-br from-cyan-400 via-gray-300 to-cyan-400 dark:from-gray-800 dark:via-cyan-800 dark:to-gray-600 text-gray-800 dark:text-gray-200 transition-colors duration-500 rounded-3xl shadow-md ${theme.accent} ${theme.secondary}`}> 
+    <section className={`max-container p-4 bg-linear-to-br from-cyan-400 via-gray-300 to-cyan-400 dark:from-gray-800 dark:via-cyan-800 dark:to-gray-600 text-gray-800 dark:text-gray-200 transition-colors duration-500 rounded-3xl shadow-md ${theme.accent} ${theme.secondary}`}> 
       <div className="flex justify-between items-center mb-8">
         <h1 className="head-text text-center">
           Academics <span role="img" aria-label="books">📚</span>

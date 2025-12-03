@@ -26,7 +26,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className={`w-[500px] lg:hidden left-0 fixed inset-0 z-[999] bg-gray-200 dark:bg-gray-800 p-2 `}
+                className={`w-[500px] lg:hidden left-0 fixed inset-0 z-99 bg-gray-200 dark:bg-gray-800 p-2 `}
             >
                 <div className={`flex flex-col items-center p-4 gap-4`}>
                     <div className="flex text-gray-800 dark:text-gray-200/60 justify-between w-full sm:ml-4 items-center mb-10">
@@ -68,7 +68,6 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
         )}
     </AnimatePresence>
   );
-
   // 3. Use createPortal to render the content into the designated DOM node
   return createPortal(mobileMenuContent, portalRoot);
 };
