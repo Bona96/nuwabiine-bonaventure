@@ -30,14 +30,14 @@ const ExperienceCard = ({ experience }) => {
       {/* Timeline Dot & Line */}
       <div className="flex flex-col items-center mr-6">
         <div
-          className="w-5 h-5 rounded-full border-4 shadow-md flex-shrink-0 z-10 transition-transform group-hover:scale-110"
+          className="w-5 h-5 rounded-full border-4 shadow-md shrink-0 z-10 transition-transform group-hover:scale-110"
           style={{ borderColor: experience.iconBg, backgroundColor: "#fff" }}
         />
         <div className="w-0.5 bg-gray-300 dark:bg-gray-700 h-full absolute top-5 group-last:hidden" />
       </div>
 
       {/* Content Box */}
-      <div className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 flex-grow transition-all duration-300 hover:shadow-2xl">
+      <div className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 grow transition-all duration-300 hover:shadow-2xl">
         {/* Floating Icon Reveal */}
         <motion.div
           variants={iconVariants}
@@ -75,7 +75,7 @@ const ExperienceCard = ({ experience }) => {
               className="flex items-start text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
             >
               <span
-                className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
                 style={{ backgroundColor: experience.iconBg }}
               />
               {point}
