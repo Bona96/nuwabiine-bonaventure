@@ -134,10 +134,10 @@ export const experiences = [
         iconBg: "#accbe1",
         date: "Jan 2022 - July 2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Engineered high-performance websites using WordPress, focusing on custom themes and plugin integration.",
+            "Facilitated collaboration between design and product teams to translate Figma wireframes into functional code.",
+            "Optimized front-end assets for maximum speed, achieving a 20% improvement in PageSpeed Insights scores.",
+            "Conducted rigorous cross-browser testing and code reviews to maintain high standards of code quality."
         ],
     },
     {
@@ -147,10 +147,9 @@ export const experiences = [
         iconBg: "#fbc3bc",
         date: "Oct 2022 - July 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Architected a robust School Management System using React.js, improving administrative efficiency.",
+            "Developed interactive UI components and managed complex state transitions using modern JavaScript (ES6+).",
+            "Maintained version control integrity across the team using Git/GitHub, resolving complex merge conflicts.",
         ],
     },
     {
@@ -160,23 +159,22 @@ export const experiences = [
         iconBg: "#b7e4c7",
         date: "Nov 2023 - Aug 2025",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Built scalable web applications utilizing the JavaScript ecosystem to deliver seamless user experiences.",
+            "Bridged the gap between design and development by using Canva to create high-fidelity assets and marketing graphics.",
+            "Implemented API integrations that streamlined data flow between frontend and backend services."
         ],
     },
     {
-        title: "Full stack Developer",
+        title: "Full Stack Developer",
         company_name: "KNIHT Digital Solutions",
         icon: meta,
         iconBg: "#a2d2ff",
         date: "Sept 2025 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Leading full-stack development for web and mobile applications using React Native and Node.js environments.",
+            "Managing end-to-end deployment pipelines including cPanel, MySQL database architecture, and PHP backend logic.",
+            "Hardened platform security by implementing Wordfence and conducting penetration testing via Kali Linux.",
+            "Spearheaded the design language for the brand using Canva and ensured pixel-perfect responsive implementation."
         ],
     },
 ];
@@ -229,7 +227,6 @@ export const projects = [
 ];
 
 // Centralized theme and styling for the app
-
 export const themes = {
   default: {
     primary: 'bg-cyan-500 text-gray-200',

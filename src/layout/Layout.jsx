@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Layout = ({ children }) => {
-  return (
-    <div className='mt-20 mb-10'>
-      {children}
-    </div>
-  )
-}
+  return <div className="relative">{children}</div>;
+};
 
-export default Layout
+export default Layout;

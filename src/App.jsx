@@ -31,8 +31,9 @@ const App = () => {
           isPlayingMusic={isPlaying}
           setIsPlayingMusic={setIsPlaying}
         />
+
+        <Footer isHome={isHome} setIsHome={setIsHome} />
       </Layout>
-      <Footer isHome={isHome} setIsHome={setIsHome} />
     </div>
   );
 };
