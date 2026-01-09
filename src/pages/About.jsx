@@ -89,21 +89,21 @@ const ExperienceCard = ({ experience }) => {
 
 const About = () => {
   return (
-    <section className="flex flex-col p-12 text-center w-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500">
-      <h1 className="">
+    <section className="flex flex-col p-20 text-center w-full  text-gray-800 dark:text-gray-200 transition-colors duration-500">
+      <h1 className="text-xl">
         Hello, I'm{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow">
+        <span className="blue-gradient_text text-2xl font-semibold drop-shadow">
           {" "}
           {bio.name.first} {bio.name.last}
         </span>{" "}
         👋
       </h1>
-      <div className="mt-5 flex flex-col gap-3 text-slate-500">
+      <div className="mt-10 flex flex-col gap-3 text-slate-800 dark:text-slate-200 ">
         <p>
           {bio.description} You can reach me at{" "}
           <a
             href={`mailto: ${bio.email}`}
-            className="text-blue-600 hover:underline"
+            className="text-cyan-800 dark:text-cyan-200 hover:underline "
           >
             {bio.email}
           </a>{" "}

@@ -6,35 +6,34 @@ import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 
-
 // Configurable form fields for reusability
 const FORM_FIELDS = [
   {
-    name: 'name',
-    label: 'Name',
-    type: 'text',
-    placeholder: 'Bonaventure',
+    name: "name",
+    label: "Name",
+    type: "text",
+    placeholder: "Bonaventure",
     required: true,
   },
   {
-    name: 'email',
-    label: 'Email',
-    type: 'email',
-    placeholder: 'example@gmail.com',
+    name: "email",
+    label: "Email",
+    type: "email",
+    placeholder: "example@gmail.com",
     required: true,
   },
   {
-    name: 'message',
-    label: 'Your Message',
-    type: 'textarea',
-    placeholder: 'Write your thoughts here...',
+    name: "message",
+    label: "Your Message",
+    type: "textarea",
+    placeholder: "Write your thoughts here...",
     required: true,
     rows: 4,
   },
 ];
 
 const INITIAL_FORM = FORM_FIELDS.reduce((acc, field) => {
-  acc[field.name] = '';
+  acc[field.name] = "";
   return acc;
 }, {});
 
@@ -43,7 +42,8 @@ const Contact = () => {
   const [form, setForm] = useState(INITIAL_FORM);
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState('idle');
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [message, setMessage] = useState(null);
 
   // Generic change handler
   const handleChange = ({ target: { name, value } }) => {
@@ -51,21 +51,21 @@ const Contact = () => {
   };
 
   // Animation handlers
-  const handleFocus = () => setCurrentAnimation('walk');
-  const handleBlur = () => setCurrentAnimation('idle');
+  const handleFocus = () => setCurrentAnimation("walk");
+  const handleBlur = () => setCurrentAnimation("idle");
 
   // Submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setCurrentAnimation('hit');
+    setCurrentAnimation("hit");
 
     // Prepare email params dynamically
     const emailParams = {
       from_name: form.name,
-      to_name: 'Nuwabiine Bonaventure',
+      to_name: "Nuwabiine Bonaventure",
       from_email: form.email,
-      to_email: 'mnuwabiine@gmail.com',
+      to_email: "mnuwabiine@gmail.com",
       message: form.message,
     };
 
@@ -81,48 +81,54 @@ const Contact = () => {
           setLoading(false);
           showAlert({
             show: true,
-            text: 'Thank you for your message 😃',
-            type: 'success',
+            text: "Thank you for your message 😃",
+            type: "success",
           });
+          setMessage("Your message has been sent. Thank you!");
           setTimeout(() => {
             hideAlert(false);
-            setCurrentAnimation('idle');
+            setMessage(null);
+            setCurrentAnimation("idle");
             setForm(INITIAL_FORM);
-          }, 3000);
+          }, 5000);
         },
         (error) => {
           setLoading(false);
           console.error(error);
-          setCurrentAnimation('idle');
+          setCurrentAnimation("idle");
           showAlert({
             show: true,
             text: "I didn't receive your message 😢",
-            type: 'danger',
+            type: "danger",
           });
         }
       );
   };
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500'>
-      {alert.show && <Alert {...alert} />}
-
+    <section className="relative flex lg:flex-row flex-col max-container bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500">
       {/* Form Section */}
-      <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text'>Get in Touch</h1>
+      <div className="flex-1 min-w-[50%] flex flex-col">
+        {alert.show && <Alert {...alert} />}
+        <h1 className="head-text">Get in Touch</h1>
+        {message && (
+          <p className="bg-green-300 mt-10 font-semibold text-center text-md text-green-800 p-2 rounded-md">
+            {message}
+          </p>
+        )}
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className="w-full flex flex-col gap-7 mt-10"
         >
           {FORM_FIELDS.map((field) => (
-            <label key={field.name} className='text-black-500 font-semibold'>
+            <label key={field.name} className="text-black-500 font-semibold">
               {field.label}
-              {field.type === 'textarea' ? (
+              {field.type === "textarea" ? (
                 <textarea
                   name={field.name}
                   rows={field.rows || 3}
-                  className='textarea'
+                  className="textarea"
                   placeholder={field.placeholder}
                   required={field.required}
                   value={form[field.name]}
@@ -134,7 +140,7 @@ const Contact = () => {
                 <input
                   type={field.type}
                   name={field.name}
-                  className='input'
+                  className="input"
                   placeholder={field.placeholder}
                   required={field.required}
                   value={form[field.name]}
@@ -146,19 +152,19 @@ const Contact = () => {
             </label>
           ))}
           <button
-            type='submit'
+            type="submit"
             disabled={loading}
-            className='btn'
+            className="btn"
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
-            {loading ? 'Sending...' : 'Submit'}
+            {loading ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
 
       {/* 3D Model Section */}
-      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
         <Canvas
           camera={{
             position: [0, 0, 5],

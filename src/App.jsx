@@ -12,7 +12,7 @@ const App = () => {
   const { isHome, setIsHome } = useSite();
   const { isPlaying, setIsPlaying } = useAudio();
   return (
-    <div className="bg-gray-200 dark:bg-gray-900 w-full h-screen">
+    <div className="">
       <Navbar />
       <Routes>
         <Route

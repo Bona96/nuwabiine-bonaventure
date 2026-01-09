@@ -33,8 +33,9 @@ export const bio = {
         first: "Nuwabiine",
         last: "Bonaventure"
     },
-    title: "Web & Software Developer",
-    description: "A results-driven Full Stack Developer from Uganda - specializing in the modern JavaScript ecosystem, focused on architecting and deploying dynamic, high-performance web and mobile applications.",
+    title: "A Fullstack Developer",
+    subtitle: "Mobile, Web & Software  Development",
+    description: "Specializing in the modern JavaScript ecosystem, focused on architecting and deploying dynamic, high-performance web and mobile applications.",
     email: "mnuwabiine@gmail.com",
     phone: "+256 760 420 592",
     address: {
@@ -216,6 +217,20 @@ export const projects = [
         name: 'GN Associates',
         description: 'Developed a website for GN Associates, a finance company in Uganda, to enhance their online presence and attract potential clients.',
         link: 'https://gnassociatesug.com/',
+    },
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-yellow',
+        name: 'Anita\'s Kitchen',
+        description: 'A one page site for Anita\'s Kitchen, a catering company in Uganda, showcasing their services and facilitating user engagement in the digital space',
+        link: 'https://anita-s-kitchen.vercel.app/',
+    },
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-yellow',
+        name: 'Marlan\'s Unisex Beauty Salon',
+        description: 'A one page site for Marlan\'s Unisex Beauty Salon, a salon in Uganda, showcasing their services and facilitating user engagement in the digital space',
+        link: 'https://marlan-sunisexbeautysalon.vercel.app/',
     },
     {
         iconUrl: stethoscope,
