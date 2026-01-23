@@ -27,6 +27,9 @@ import {
     typescript,
     youtube
 } from "../assets/icons";
+import heroImg from "../assets/images/hero.jpg";
+import metaImg from "../assets/images/meta.png";
+import reactessntialscertificateImg from "../assets/images/react-essentials-training.png";
 
 export const bio = {
     name: {
@@ -43,7 +46,39 @@ export const bio = {
         country: "Uganda"
     }
 } 
+export const academics = [
+  {
+    title: "Bachelor's Degree in Information & Communication Technology",
+    institution: "Uganda Martyrs University - Nkozi Campus",
+    description:
+      "Graduated with 2nd class. Then focused and specialised in Web and Mobile Application development, Graphics desgin with canva and Website development with WordPress, PHP, PhpMyAdmin, MySQL and cPanel. I also understand AI concepts and know my way around designing models with python.",
+    image: heroImg,
+    link: 'https://umu.ac.ug//',
+    pdf: '/pdfs/transcript.pdf',
+    year: '2022',
+  },
+  {
+    title: "Computational Thinking Course",
+    institution: "University of Pennsylvania - Coursera",
+    description:
+      "Completed Andrew Ng's ML course. Learned supervised/unsupervised learning, neural networks, and practical ML skills.",
+    image: metaImg,
+    link: 'https://www.coursera.org/learn/machine-learning',
+    pdf: '/pdfs/transcript.pdf',
+    year: '2023',
+  },
 
+  {
+    title: "React Esentials Professional Certificate",
+    institution: "LinkedIn Learning",
+    description:
+      "In this course, software developer and instructor Eve Porcello highlights the latest techniques for building a React app from scratch. Learn how to create elements, write components, and use React hooks. Get familiar with libraries like Next and Vite, and discover the differences between React Server Components and Client Components. Find out how to use the latest tools, techniques, and patterns that will help futureproof applications and make them more scalable and performant. After watching the course, you will be able to start your own project from scratch, and you will also be able to jump into an existing React codebase and make an impact.",
+    image: reactessntialscertificateImg,
+    link: 'https://www.linkedin.com/learning/certificates/2722e251fced4147ecb83a594c7ca502a86462f11bafe32aca19668aa50adc1c?trk=share_certificate',
+    pdf: '/pdfs/react-essentials-training.pdf',
+    year: '2025',
+  },
+];
 export const skills = [
     {
         imageUrl: css,
@@ -74,11 +109,6 @@ export const skills = [
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
-    },
-    {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
     },
     {
         imageUrl: motion,
@@ -120,11 +150,6 @@ export const skills = [
         name: "Tailwind CSS",
         type: "Frontend",
     },
-    // {
-    //     imageUrl: typescript,
-    //     name: "TypeScript",
-    //     type: "Frontend",
-    // }
 ];
 
 export const experiences = [
