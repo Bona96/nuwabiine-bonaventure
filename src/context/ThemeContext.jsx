@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useState } from 'react';
-import { themes } from '../constants';
+import { createContext, useContext, useState } from "react";
+import { themes } from "../constants";
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('default');
+  const [themeName, setThemeName] = useState("default");
   const theme = themes[themeName];
 
   const switchTheme = (name) => {

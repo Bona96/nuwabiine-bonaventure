@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, User, Briefcase, Mail } from "lucide-react"; // Import Lucide icons
 
 import { UG as Uganda } from "country-flag-icons/react/3x2";
+import { STAGE_CONTENT } from "../constants";
 
 // Helper Component for the dynamic link (more reusable and cleaner)
 const ActionLink = ({ to, label, icon: IconComponent }) => (
@@ -14,50 +15,6 @@ const ActionLink = ({ to, label, icon: IconComponent }) => (
     <IconComponent className="w-4 h-4 object-contain transition-transform group-hover:translate-x-1" />
   </Link>
 );
-
-// Define the content and structure for each stage
-const STAGE_CONTENT = {
-  1: {
-    title: (
-      <>
-        {/* Mujebaleko, bampita<span className='font-semibold mx-2'>Nuwabiine</span> 👋
-        <br />
-        Mwasiba muta, amazina ni<span className='font-semibold mx-2'>Nuwabiine</span> 👋
-        <br /> */}
-        Hi, <span className="font-semibold mx-2">Nuwabiine here...</span> 👋
-        <br />
-      </>
-    ),
-    paragraph:
-      "A Mobile, Web & Software Fullstack Developer - Proud to be Ugandan",
-  },
-  2: {
-    paragraph:
-      "It has been a very exciting journey learning and building my skills as a developer. Want to know more about me?",
-    link: {
-      to: "/about",
-      label: "Learn more...",
-      icon: User, // Lucide User icon
-    },
-  },
-  3: {
-    paragraph: "Interested in seeing some of my work and projects?",
-    link: {
-      to: "/portfolio",
-      label: "Visit my portfolio",
-      icon: Briefcase, // Lucide Briefcase icon
-    },
-  },
-  4: {
-    paragraph:
-      "Get in touch with me for collaborations, projects, or just to say hi!",
-    link: {
-      to: "/contact",
-      label: "Let's talk",
-      icon: Mail, // Lucide Mail icon
-    },
-  },
-};
 
 const HomeInfo = ({ currentStage }) => {
   // Class Names (kept for styling consistency)

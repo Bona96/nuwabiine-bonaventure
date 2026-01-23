@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import Modal from "../components/Modal";
-
-import heroImg from "../assets/images/hero.jpg";
-import metaImg from "../assets/images/meta.png";
-import reactessntialscertificateImg from "../assets/images/react-essentials-training.png";
 import { academics } from "../constants";
 
 const excerpt = (text, len = 80) =>
