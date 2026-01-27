@@ -42,7 +42,7 @@ export const STAGE_CONTENT = {
         <br />
       </>
     ),
-    paragraph: "A Fullstack JavaScript Developer - Proud to be Ugandan",
+    paragraph: "A Fullstack Web & Mobile Developer - Proud to be Ugandan",
   },
   2: {
     paragraph:
@@ -280,7 +280,7 @@ export const projects = [
     theme: "btn-back-green",
     name: "TAMI Uganda",
     description:
-      "Developed a website for the Transafrican Management Institute (TAMI) in Uganda, showcasing their services and facilitating user engagement in the digital space",
+      "Developed a wordpress website for the Transafrican Management Institute (TAMI) in Uganda, showcasing their services and facilitating user engagement in the digital space",
     link: "https://tamiuganda.org/",
   },
   {
@@ -288,8 +288,32 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "GN Associates",
     description:
-      "Developed a website for GN Associates, a finance company in Uganda, to enhance their online presence and attract potential clients.",
+      "Developed a wordpress website for GN Associates, a finance company in Uganda, to enhance their online presence and attract potential clients.",
     link: "https://gnassociatesug.com/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-yellow",
+    name: "STAWI Hope of Africa",
+    description:
+      "Developed a wordpress website for STAWI, an NGO in Uganda, to enhance their online presence and attract potential clients.",
+    link: "https://stawihopeofafrica.org/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-yellow",
+    name: "KNiHT Digital School",
+    description:
+      "Currently developing a web application, for KNIHT Digital School. Meant to extend the learning experience to the online space.",
+    link: "https://kniht-digital-school.vercel.app/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-yellow",
+    name: "KNiHT Digital Solutions",
+    description:
+      "Currently developing a web application, for KNIHT Digital School. Meant to extend the learning experience to the online space.",
+    link: "https://knihtdigitalsolutions.vercel.app/",
   },
   {
     iconUrl: pricewise,

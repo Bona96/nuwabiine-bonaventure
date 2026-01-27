@@ -10,12 +10,13 @@ const Footer = ({ isHome, setIsHome }) => {
     >
       <div className="footer-container flex ">
         <p className="text-center text-sm">
-          © 2025 <strong>Nuwabiine Mbiine</strong>. All rights reserved.
+          © 2025 <strong>Nuwabiine Mbiine Bonaventure</strong>. All rights
+          reserved.
         </p>
 
         <div className="flex flex-row gap-3 flex-wrap justify-center items-center rounded-md p-2 bg-cyan-300 dark:bg-cyan-200">
           {socialLinks.map((link) => (
-            <Link key={link.name} to={link.link} target="_blank">
+            <Link key={link.name} to={link?.link} target="_blank">
               <img
                 src={link.iconUrl}
                 alt={link.name}
