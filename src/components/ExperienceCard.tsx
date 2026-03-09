@@ -39,13 +39,13 @@ const ExperienceCard = ({ experience }) => {
         <motion.div
           variants={iconVariants}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute -top-4 -right-4 w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-20 border-2 border-white dark:border-gray-900"
+          className="absolute -top-4 -right-4 w-16 h-16 rounded-full shadow-lg flex items-center justify-center z-20 border-2 border-white dark:border-gray-900"
           style={{ background: experience.iconBg }}
         >
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
+            className="w-[80%] h-[80%] object-contain"
           />
         </motion.div>
 

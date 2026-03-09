@@ -5,48 +5,25 @@ import { Suspense, useRef, useState } from "react";
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
+import { FORM_FIELDS } from "../constants";
 
-// Configurable form fields for reusability
-const FORM_FIELDS = [
-  {
-    name: "name",
-    label: "Name",
-    type: "text",
-    placeholder: "Bonaventure",
-    required: true,
-  },
-  {
-    name: "email",
-    label: "Email",
-    type: "email",
-    placeholder: "example@gmail.com",
-    required: true,
-  },
-  {
-    name: "message",
-    label: "Your Message",
-    type: "textarea",
-    placeholder: "Write your thoughts here...",
-    required: true,
-    rows: 4,
-  },
-];
 
-const INITIAL_FORM = FORM_FIELDS.reduce((acc, field) => {
+
+const INITIAL_FORM = FORM_FIELDS.reduce<Record<string, string>>((acc, field) => {
   acc[field.name] = "";
   return acc;
 }, {});
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState(INITIAL_FORM);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [form, setForm] = useState<Record<string, string>>(INITIAL_FORM);
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState<string | null>(null);
 
   // Generic change handler
-  const handleChange = ({ target: { name, value } }) => {
+  const handleChange = ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -55,7 +32,7 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   // Submission handler
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setCurrentAnimation("hit");
@@ -80,13 +57,12 @@ const Contact = () => {
         () => {
           setLoading(false);
           showAlert({
-            show: true,
             text: "Thank you for your message 😃",
             type: "success",
           });
           setMessage("Your message has been sent. Thank you!");
           setTimeout(() => {
-            hideAlert(false);
+            hideAlert();
             setMessage(null);
             setCurrentAnimation("idle");
             setForm(INITIAL_FORM);
@@ -97,7 +73,6 @@ const Contact = () => {
           console.error(error);
           setCurrentAnimation("idle");
           showAlert({
-            show: true,
             text: "I didn't receive your message 😢",
             type: "danger",
           });
@@ -164,7 +139,7 @@ const Contact = () => {
       </div>
 
       {/* 3D Model Section */}
-      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-137.5 h-87.5">
         <Canvas
           camera={{
             position: [0, 0, 5],

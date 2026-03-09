@@ -1,0 +1,15 @@
+import { useState } from 'react';
+import type { AlertType } from '../lib/types';
+
+const useAlert = () => {
+    const [alert, setAlert] = useState<AlertType>({ show: false, text: '', type: 'danger' });
+
+    const showAlert = ({ text, type = 'danger' }: { text: string; type?: string }) => 
+        setAlert({ show: true, text, type });
+
+    const hideAlert = () => setAlert({ show: false, text: '', type: 'danger' });
+
+    return { alert, showAlert, hideAlert };
+};
+
+export default useAlert;

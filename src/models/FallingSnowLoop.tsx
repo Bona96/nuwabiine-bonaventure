@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
+import * as THREE from "three";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-
+//@ts-ignore
 import fallingSnowLoopScene from "../assets/3d/falling_snow_loop.glb";
 
 // -------------------------------------------------------------
@@ -13,11 +14,15 @@ import fallingSnowLoopScene from "../assets/3d/falling_snow_loop.glb";
 //
 // The snow needs to be large enough to surround the island.
 // -------------------------------------------------------------
-const SNOW_SCALE = [50, 60, 50]; // Significantly larger scale
-const SNOW_POSITION = [0, -35, 0];    // Centered, as the environment
+const SNOW_SCALE: [number, number, number] = [50, 60, 50]; // Significantly larger scale
+const SNOW_POSITION: [number, number, number] = [0, -35, 0];    // Centered, as the environment
 
-export const FallingSnowLoop = ({ isRotating, ...props }) => {
-    const group = useRef();
+interface FallingSnowLoopProps {
+    isRotating: boolean;
+}
+
+export const FallingSnowLoop: React.FC<FallingSnowLoopProps> = ({ isRotating, ...props }) => {
+    const group = useRef<THREE.Group>(null);
     const { scene, animations } = useGLTF(fallingSnowLoopScene);
     
     // 1. Animation Setup: Get the animation actions from the model
@@ -32,10 +37,10 @@ export const FallingSnowLoop = ({ isRotating, ...props }) => {
         // You might need to check your model's exact animation name.
         const animationName = Object.keys(actions)[0]; 
         console.log(actions)
-        if (animationName) {
-            actions[animationName].play();
-            actions[animationName].setEffectiveTimeScale(0.5); // Set speed if needed
-            actions[animationName].loop = true; // Ensure it loops
+        if (animationName && actions[animationName]) {
+            actions[animationName]!.play();
+            actions[animationName]!.setEffectiveTimeScale(0.5); // Set speed if needed
+            actions[animationName]!.loop = THREE.LoopRepeat; // Ensure it loops
         }
 
         // Cleanup function for when the component unmounts
@@ -48,7 +53,7 @@ export const FallingSnowLoop = ({ isRotating, ...props }) => {
 
     // 3. Rotation Logic (Optional, only needed if the snow should rotate with the island)
     useFrame((_, delta) => {
-        if (isRotating) {
+        if (isRotating && group.current) {
             // Apply rotation around the Y-axis. 
             // The speed should match the Island's rotation logic for perfect alignment.
             group.current.rotation.y += 0.25 * delta; 

@@ -1,11 +1,18 @@
 import { createContext, useContext, useRef, useState, useEffect } from "react";
-import sakura from "../assets/music/sakura.mp3";
-import onecallaway from "../assets/music/onecallaway.mp3";
+import { SONGS } from "../constants/index";
 
-const AudioContext = createContext();
+type AudioContextType = {
+  isPlaying: boolean;
+  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  currentTrack: string;
+  changeTrack: (track: string) => void;
+};
 
-export const AudioProvider = ({ children }) => {
-  const [currentTrack, setCurrentTrack] = useState(onecallaway);
+
+const AudioContext = createContext<AudioContextType | null>(null);
+
+export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [currentTrack, setCurrentTrack] = useState(SONGS[0].value);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio(currentTrack));
 
@@ -26,7 +33,7 @@ export const AudioProvider = ({ children }) => {
     };
   }, []);
 
-  const changeTrack = (track) => {
+  const changeTrack = (track: string) => {
     setCurrentTrack(track);
     setIsPlaying(true);
   };
@@ -38,4 +45,9 @@ export const AudioProvider = ({ children }) => {
   );
 };
 
-export const useAudio = () => useContext(AudioContext);
+// export const useAudio = () => useContext(AudioContext);
+export const useAudio = () => {
+  const ctx = useContext(AudioContext);
+  if (!ctx) throw new Error('useDarkMode must be used within DarkModeProvider');
+  return ctx;
+}

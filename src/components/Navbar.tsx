@@ -1,4 +1,3 @@
-import { createPortal } from 'react-dom'; // Note: corrected typo from creatPortal
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react'; // Import Lucide icons for mobile menu
@@ -31,15 +30,9 @@ const Navbar = ({width=10, height=10}) => {
     }, [isMobileMenuOpen]);
     // ------------------------------------------------------------------
 
-    // Define the class names once for consistency and maintainability
-    const navLinkClasses = ({ isActive }) => 
-        isActive 
-        ? 'blue-gradient_text font-bold' // Highlight active link
-        : 'text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300';
-
     return (
         // The main header should likely use `flex justify-between` to separate the logo and the nav elements
-        <header className="header">
+        <header className="flex w-full absolute z-99 items-center justify-between p-4">
             
             {/* Logo/Brand Link */}
             <NavLink

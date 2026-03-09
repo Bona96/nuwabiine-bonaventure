@@ -1,8 +1,8 @@
-import { useDarkMode } from "../context/DarkModeContext"; // Import dark mode context
-import { soundoff, soundon } from "../assets/icons";
-import { useAudio } from "../context/AudioContext";
-import sakura from "../assets/music/sakura.mp3";
-import onecallaway from "../assets/music/onecallaway.mp3";
+import { useDarkMode } from "../context/DarkModeContext.tsx"; // Import dark mode context
+import { soundoff, soundon } from "../assets/icons/index.ts";
+import { useAudio } from "../context/AudioContext.tsx";
+import { SONGS, themes } from "../constants/index.tsx";
+import { useTheme } from "../context/ThemeContext";
 
 //dark mode
 export const DarkModeToggle = () => {
@@ -18,15 +18,11 @@ export const DarkModeToggle = () => {
     </button>
   );
 };
-
-// Example song list (expand as needed)
-const SONGS = [
-  { label: "One call", value: onecallaway },
-  { label: "Sakura", value: sakura },
-  // Add more songs here, e.g. { label: "Another Song", value: anotherSong }
-];
-
-export const AudioToggle = ({ isPlayingMusic, setIsPlayingMusic }) => {
+type AudioToggleProps = {
+  isPlayingMusic: boolean;
+  setIsPlayingMusic: (v: boolean) => void
+}
+export const AudioToggle: React.FC<AudioToggleProps> = ({ isPlayingMusic, setIsPlayingMusic }) => {
   const { currentTrack, changeTrack } = useAudio();
   return (
     <div className="absolute bottom-4 left-4 z-999 flex flex-col gap-2 items-start">
@@ -52,6 +48,30 @@ export const AudioToggle = ({ isPlayingMusic, setIsPlayingMusic }) => {
           </option>
         ))}
       </select>
+    </div>
+  );
+};
+
+export const ThemeToogle = () => {
+  const { theme, themeName, switchTheme } = useTheme();
+
+  return (
+    <div className="flex flex-row flex-wrap gap-2 ">
+      {themes.map((t) => {
+        return (
+          <button
+            key={t.id}
+            className={`${theme.styles.button} ${
+              themeName === t.name
+                ? theme.styles.primary
+                : theme.styles.secondary
+            }`}
+            onClick={() => switchTheme(t.name)}
+          >
+            {t.name.charAt(0).toUpperCase() + t.name.slice(1)}
+          </button>
+        );
+      })}
     </div>
   );
 };

@@ -1,5 +1,4 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { About, Academics, Contact, Home, Portfolio } from "./pages";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components";
@@ -7,12 +6,19 @@ import { useAudio } from "./context/AudioContext";
 import { AudioToggle } from "./components/Buttons";
 import { useSite } from "./context/SiteContext";
 import Layout from "./layout/Layout";
+import type React from "react";
 
-const App = () => {
+type AppProps = {
+  children: React.ReactNode;
+  isHome: boolean;
+  setIsHome: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const App: React.FC<AppProps> = () => {
   const { isHome, setIsHome } = useSite();
   const { isPlaying, setIsPlaying } = useAudio();
   return (
-    <div className="">
+    <>
       <Navbar />
       <Routes>
         <Route
@@ -34,7 +40,7 @@ const App = () => {
 
         <Footer isHome={isHome} setIsHome={setIsHome} />
       </Layout>
-    </div>
+    </>
   );
 };
 
