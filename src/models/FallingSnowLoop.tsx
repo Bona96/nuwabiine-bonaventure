@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-//@ts-ignore
 import fallingSnowLoopScene from "../assets/3d/falling_snow_loop.glb";
 
 // -------------------------------------------------------------

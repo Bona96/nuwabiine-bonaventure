@@ -10,7 +10,7 @@ const fadeIn = {
 };
 
 // 3. Define the new ExperienceCard component (or put it in a separate file)
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = ({ experience }: { experience: any }) => {
   // Define the animation for the revealing icon
   const iconVariants = {
     initial: { opacity: 0, x: 20, scale: 0.8 },
@@ -66,7 +66,7 @@ const ExperienceCard = ({ experience }) => {
 
         {/* Points Section */}
         <ul className="space-y-3">
-          {experience.points.map((point, index) => (
+          {experience.points.map((point: string, index: number) => (
             <li
               key={`experience-point-${index}`}
               className="flex items-start text-sm text-gray-700 dark:text-gray-300 leading-relaxed"

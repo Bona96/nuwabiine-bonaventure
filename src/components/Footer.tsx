@@ -6,7 +6,7 @@ type FooterProps = {
   setIsHome: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Footer: React.FC<FooterProps> = ({ isHome, setIsHome }) => {
+const Footer: React.FC<FooterProps> = ({ isHome }) => {
   return (
     <footer
       className={`${

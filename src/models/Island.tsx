@@ -12,11 +12,12 @@
 import { a } from "@react-spring/three";
 import { useGLTF } from "@react-three/drei";
 import { useIslandRotation } from "../hooks/useIslandRotation";
+import * as THREE from "three";
 
 // @ts-ignore
 import islandScene from "../assets/3d/island.glb";
 import type { Mesh, MeshStandardMaterial } from "three";
-import type { GLTF } from "three-stdlib";
+// import { GLTF } from "three-stdlib";
 
 interface IslandProps {
   isRotating: boolean;
@@ -26,7 +27,7 @@ interface IslandProps {
   [key: string]: any;
 }
 
-type GLTFResult = GLTF & {
+type GLTFResult = (THREE.Group & {
   nodes: {
     polySurface944_tree_body_0: Mesh;
     polySurface945_tree1_0: Mesh;
@@ -39,7 +40,7 @@ type GLTFResult = GLTF & {
   materials: {
     PaletteMaterial001: MeshStandardMaterial;
   };
-};
+});
 
 export const Island: React.FC<IslandProps> = ({
   isRotating,

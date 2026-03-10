@@ -1,14 +1,17 @@
-// Your component file (e.g., Header.jsx or wherever the menu logic is)
-import React from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { DarkModeToggle } from "./Buttons";
-// import DarkModeToggle from './DarkModeToggle'; // Assuming this component exists
+
+type MobileNavProps = {
+  isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  links?: { to: string; label: string }[];
+};
 
 // Define the component where your mobile menu is:
-const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
+const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }: MobileNavProps) => {
   // 1. Get the target DOM node
   const portalRoot = document.getElementById("portal-root");
 
@@ -16,7 +19,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
   if (!isMobileMenuOpen || !portalRoot) {
     return null;
   }
-
+  console.log(links)
   // 2. The component to be rendered by the portal
   const mobileMenuContent = (
     <AnimatePresence>
@@ -26,7 +29,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }) => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className={`w-[300px] lg:hidden absolute inset-0 z-99 bg-gray-200 dark:bg-gray-800 p-2 `}
+          className={`w-75 lg:hidden absolute inset-0 z-99 bg-gray-200 dark:bg-gray-800 p-2 `}
         >
           <div
             className={`flex flex-col items-center justify-center p-4 gap-4`}

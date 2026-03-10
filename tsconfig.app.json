@@ -25,5 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "./src/hooks/useIslandRotation.ts"]
+  "include": ["src", "./src/hooks/useIslandRotation.ts", "types.d.ts"]
 }

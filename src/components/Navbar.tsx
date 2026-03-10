@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Import Lucide icons for mobile menu
+import { Menu } from 'lucide-react'; // Import Lucide icons for mobile menu
 import { DarkModeToggle } from './Buttons';
 import MobileNav from './MobileNav'; // Assuming MobileNav is handled separately
 import { FloatingDockComponent } from './FloatingDock';

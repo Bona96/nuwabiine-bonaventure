@@ -2,14 +2,14 @@ import { useEffect, useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { a } from "@react-spring/three";
+import * as THREE from "three";
 
 import birdScene from "../assets/3d/bird.glb";
-import birdScene2 from "../assets/3d/bird2.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
 export const Bird = () => {
-  const birdRef = useRef();
-  const birdTwoRef = useRef();
+  const birdRef = useRef<THREE.Mesh>(null);
+  const birdTwoRef = useRef<THREE.Mesh>(null);
 
   // Load the 3D model and animations from the provided GLTF file
   const { scene, animations } = useGLTF(birdScene);
@@ -26,55 +26,45 @@ export const Bird = () => {
 
   // Play the "Take 001" animation when the component mounts
   useEffect(() => {
-    actions["Take 001"].play();
-    actionsTwo["Take 001"].play(); // Play animation for the second bird
+    actions["Take 001"]?.play();
+    actionsTwo["Take 001"]?.play();
   }, [actions, actionsTwo]);
 
   useFrame(({ clock, camera }) => {
+    if (!birdRef.current || !birdTwoRef.current) return;
+
     const elapsedTime = clock.elapsedTime;
 
     // --- Bird One Movement ---
-    // Simulate bird-like motion using a sine wave
     birdRef.current.position.y = Math.sin(elapsedTime) * 0.2 + 2;
 
-    // Check if the bird reached a certain endpoint relative to the camera
     if (birdRef.current.position.x > camera.position.x + 10) {
-      // Change direction to backward and rotate the bird 180 degrees on the y-axis
       birdRef.current.rotation.y = Math.PI;
     } else if (birdRef.current.position.x < camera.position.x - 10) {
-      // Change direction to forward and reset the bird's rotation
       birdRef.current.rotation.y = 0;
     }
 
-    // Update the X and Z positions based on the direction
     if (birdRef.current.rotation.y === 0) {
-      // Moving forward
       birdRef.current.position.x += 0.01;
       birdRef.current.position.z -= 0.01;
     } else {
-      // Moving backward
       birdRef.current.position.x -= 0.01;
       birdRef.current.position.z += 0.01;
     }
 
     // --- Bird Two Movement (Offset from Bird One) ---
-    // Offset the sine wave by Math.PI for an out-of-sync flapping motion
-    birdTwoRef.current.position.y = Math.sin(elapsedTime + Math.PI) * 0.2 + 2.5; // Slightly higher
+    birdTwoRef.current.position.y = Math.sin(elapsedTime + Math.PI) * 0.2 + 2.5;
 
-    // Independent Boundary Check and Movement Logic for Bird Two
-    if (birdTwoRef.current.position.x > camera.position.x + 12) { // Wider boundary
+    if (birdTwoRef.current.position.x > camera.position.x + 12) {
       birdTwoRef.current.rotation.y = Math.PI;
-    } else if (birdTwoRef.current.position.x < camera.position.x - 8) { // Smaller backward boundary
+    } else if (birdTwoRef.current.position.x < camera.position.x - 8) {
       birdTwoRef.current.rotation.y = 0;
     }
 
-    // Update the X and Z positions based on the direction (slightly faster/slower)
     if (birdTwoRef.current.rotation.y === 0) {
-      // Moving forward a bit faster
       birdTwoRef.current.position.x += 0.012;
-      birdTwoRef.current.position.z -= 0.008; // Slightly different Z-movement
+      birdTwoRef.current.position.z -= 0.008;
     } else {
-      // Moving backward a bit slower
       birdTwoRef.current.position.x -= 0.008;
       birdTwoRef.current.position.z += 0.012;
     }
@@ -87,8 +77,8 @@ export const Bird = () => {
         <primitive object={scene} />
       </mesh>
 
-      {/* Second Bird - **USES birdTwoRef and the CLONED SCENE** */}
-      <mesh ref={birdTwoRef} position={[-7, 2.5, 3]} scale={[0.002, 0.002, 0.002]}> {/* Slightly larger and different starting position */}
+      {/* Second Bird */}
+      <mesh ref={birdTwoRef} position={[-7, 2.5, 3]} scale={[0.002, 0.002, 0.002]}>
         <primitive object={secondBirdScene} />
       </mesh>
     </a.group>

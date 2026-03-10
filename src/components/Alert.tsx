@@ -1,4 +1,5 @@
-const Alert = ({ type, text }) => {
+
+const Alert = ({ type, text }: { type: string; text: string }) => {
   return (
     <div className='absolute top-10 left-0 right-0 flex justify-center items-center'>
       <div
