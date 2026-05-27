@@ -22,6 +22,15 @@ import AnitaKitchen from "./anita-s-kitchen.png";
 import TamiUganda from "./tami-uganda-project.png";
 // @ts-ignore
 import MarlanUnisex from "./marlansunisex.png";
+// @ts-ignore
+import MigaddeCatholicParish from "./migadde-catholic-parish-hero-section.png";
+// @ts-ignore
+import KnihtdigitalSolutions from "./knihtdigitalsolutions-hero-section.png";
+// @ts-ignore
+import Slisuganda from "./slisuganda-hero-section.png";
+// @ts-ignore
+import Stawi from "./stawihopeofafrica-hero-section.png";
+
 
 export {
     hero,
@@ -35,5 +44,9 @@ export {
     GNAssociates,
     AnitaKitchen,
     TamiUganda,
-    MarlanUnisex
+    MarlanUnisex,
+    MigaddeCatholicParish,
+    KnihtdigitalSolutions,
+    Slisuganda,
+    Stawi
 }

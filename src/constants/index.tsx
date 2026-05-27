@@ -1,4 +1,4 @@
-import { AnitaKitchen, CandyKProject, GNAssociates, KnihtLogo, MarlanUnisex, reactessntialscertificateImg, TamiUganda } from "../assets/images/index";
+import { AnitaKitchen, CandyKProject, GNAssociates, KnihtdigitalSolutions, KnihtLogo, MarlanUnisex, MigaddeCatholicParish, reactessntialscertificateImg, Slisuganda, Stawi, TamiUganda } from "../assets/images/index";
 import {
   contact,
   css,
@@ -331,6 +331,14 @@ export const projects = [
     link: "https://candykluxecosmetics.vercel.app/",
   },
   {
+    iconUrl: Slisuganda,
+    theme: "btn-back-yellow",
+    name: "SLIS uganda",
+    description:
+      "A wordpress website for SLIS Uganda, showcasing their services and facilitating user engagement in the digital space",
+    link: "https://slisuganda.org/",
+  },
+  {
     iconUrl: MarlanUnisex,
     theme: "btn-back-yellow",
     name: "Marlan's Unisex Beauty Salon",
@@ -355,7 +363,7 @@ export const projects = [
     link: "https://gnassociatesug.com/",
   },
   {
-    iconUrl: pricewise,
+    iconUrl: Stawi,
     theme: "btn-back-yellow",
     name: "STAWI Hope of Africa",
     description:
@@ -363,15 +371,7 @@ export const projects = [
     link: "https://stawihopeofafrica.org/",
   },
   {
-    iconUrl: pricewise,
-    theme: "btn-back-yellow",
-    name: "KNiHT Digital School",
-    description:
-      "Currently developing a web application, for KNIHT Digital School. Meant to extend the learning experience to the online space.",
-    link: "https://kniht-digital-school.vercel.app/",
-  },
-  {
-    iconUrl: pricewise,
+    iconUrl: KnihtdigitalSolutions,
     theme: "btn-back-yellow",
     name: "KNiHT Digital Solutions",
     description:
@@ -388,12 +388,12 @@ export const projects = [
   },
   
   {
-    iconUrl: stethoscope,
+    iconUrl: MigaddeCatholicParish,
     theme: "btn-back-pink",
-    name: "Full Stack Clinic Management System",
+    name: "Migadde Catholic Parish",
     description:
-      "A comprehensive clinic management system that streamlines patient records, appointments, billing, and communication between healthcare providers and patients.",
-    link: "https://github.com/",
+      "A wordpress website for Migadde Catholic Parish, a church in Uganda, showcasing their services and facilitating user engagement in the digital space",
+    link: "https://migaddecatholicparish.org/",
   },
 ];
 

@@ -7,8 +7,6 @@ import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 import { FORM_FIELDS } from "../constants";
 
-
-
 const INITIAL_FORM = FORM_FIELDS.reduce<Record<string, string>>((acc, field) => {
   acc[field.name] = "";
   return acc;
@@ -103,7 +101,7 @@ const Contact = () => {
                 <textarea
                   name={field.name}
                   rows={field.rows || 3}
-                  className="textarea"
+                  className="input resize-none"
                   placeholder={field.placeholder}
                   required={field.required}
                   value={form[field.name]}

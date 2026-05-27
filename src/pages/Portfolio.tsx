@@ -17,10 +17,8 @@ const Portfolio = () => {
       </h1>
 
       <p className={`${porttextColor} mt-2 leading-relaxed text-lg max-w-3xl mx-auto text-center`}>
-        These projects allow me to showcase my skills and creativity, and I hope
-        they inspire you to explore the possibilities of technology. Feel free to
-        check them out and reach out if you have any questions or want to
-        collaborate!
+        Through these projects, I aim to demonstrate the practical and creative possibilities of modern technology. 
+        I encourage you to browse through them, and I welcome the opportunity to connect for future collaborations or technical inquiries!
       </p>
 
       <div className="flex flex-wrap justify-center my-10 gap-8">
