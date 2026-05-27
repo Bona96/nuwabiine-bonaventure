@@ -96,14 +96,14 @@ export const bio: Bio = {
 // Academics
 export const academics = [
   {
-    title: "Bachelor's Degree in Information & Communication Technology",
-    institution: "Uganda Martyrs University - Nkozi Campus",
+    title: "Masters of Science in Cybersecurity & Digital Forensics",
+    institution: "Uganda Christian University - Mukono Campus",
     description:
-      "Graduated with 2nd class. Then focused and specialised in Web and Mobile Application development, Graphics desgin with canva and Website development with WordPress, PHP, PhpMyAdmin, MySQL and cPanel. I also understand AI concepts and know my way around designing models with python.",
+      "Currently pursuing a master's degree in cybersecurity and digital forensics. Gaining advanced knowledge in securing digital assets, investigating cybercrimes, and implementing robust security measures to protect information systems.",
     image: heroImg,
-    link: "https://umu.ac.ug//",
-    pdf: "/pdfs/transcript.pdf",
-    year: "2022",
+    link: "https://ucu.ac.ug/",
+    // pdf: "/pdfs/transcript.pdf",
+    year: "2026",
   },
   {
     title: "Computational Thinking Course",
@@ -115,7 +115,6 @@ export const academics = [
     pdf: "/pdfs/transcript.pdf",
     year: "2023",
   },
-
   {
     title: "React Esentials Professional Certificate",
     institution: "LinkedIn Learning",
@@ -126,6 +125,16 @@ export const academics = [
     pdf: "/pdfs/react-essentials-training.pdf",
     year: "2025",
   },
+  {
+    title: "Bachelor's Degree in Information & Communication Technology",
+    institution: "Uganda Martyrs University - Nkozi Campus",
+    description:
+      "Graduated with 2nd class. Then focused and specialised in Web and Mobile Application development, Graphics desgin with canva and Website development with WordPress, PHP, PhpMyAdmin, MySQL and cPanel. I also understand AI concepts and know my way around designing models with python.",
+    image: heroImg,
+    link: "https://umu.ac.ug//",
+    pdf: "/pdfs/transcript.pdf",
+    year: "2016 - 2022",
+  },  
 ];
 
 // Skills

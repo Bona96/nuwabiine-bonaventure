@@ -32,14 +32,13 @@ const Navbar = ({width=10, height=10}) => {
 
     return (
         // The main header should likely use `flex justify-between` to separate the logo and the nav elements
-        <header className="flex w-full absolute z-100 items-center justify-between p-4">
+        <header className="flex w-full absolute z-99 items-center justify-between p-4">
             
             {/* Logo/Brand Link */}
             <NavLink
                 to="/"
                 className="w-auto h-10 rounded-lg bg-white dark:bg-gray-800 items-center justify-center flex font-bold shadow-md px-4"
             >
-                {/* <p className='blue-gradient_text text-xl'>NMB</p> */}
                 <img 
                     src="/nuwabiine-logo-transparent.png" 
                     alt="Logo" 

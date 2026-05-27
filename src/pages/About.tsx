@@ -11,7 +11,7 @@ const About: React.FC<HomeType> = ({ isHome, setIsHome }) => {
   }, [isHome, setIsHome]);
   return (
     <section className="flex flex-col p-20 text-left w-full  text-gray-800 dark:text-gray-200 transition-colors duration-500">
-      <h1 className="text-xl">
+      <h1 className="text-xl mt-20">
         Welcome, I'm{" "}
         <span className="blue-gradient_text text-2xl font-semibold drop-shadow">
           {" "}
@@ -45,7 +45,7 @@ const About: React.FC<HomeType> = ({ isHome, setIsHome }) => {
         <div className="mt-16 grid grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-20">
           {skills.map((skill) => (
             <div
-              className="block-container w-[130px] h-[130px]"
+              className="block-container w-32.5 h-32.5"
               key={skill.name}
             >
               <div className="btn-back rounded-xl drop-shadow-xl drop-shadow-cyan-600 dark:drop-shadow-cyan-200" />
