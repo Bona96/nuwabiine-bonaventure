@@ -15,8 +15,10 @@ type AppProps = {
 };
 
 const App: React.FC<AppProps> = () => {
+
   const { isHome, setIsHome } = useSite();
   const { isPlaying, setIsPlaying } = useAudio();
+  
   return (
     <>
       <Navbar />
@@ -28,18 +30,17 @@ const App: React.FC<AppProps> = () => {
       </Routes>
       <Layout>
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/academics" element={<Academics />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About isHome={isHome} setIsHome={setIsHome} />} />
+          <Route path="/academics" element={<Academics isHome={isHome} setIsHome={setIsHome} />} />
+          <Route path="/portfolio" element={<Portfolio isHome={isHome} setIsHome={setIsHome} />} />
+          <Route path="/contact" element={<Contact isHome={isHome} setIsHome={setIsHome} />} />
         </Routes>
         <AudioToggle
           isPlayingMusic={isPlaying}
           setIsPlayingMusic={setIsPlaying}
         />
-
-        <Footer isHome={isHome} setIsHome={setIsHome} />
       </Layout>
+      <Footer isHome={isHome} setIsHome={setIsHome} />
     </>
   );
 };

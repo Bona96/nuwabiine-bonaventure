@@ -16,9 +16,9 @@ const Home: React.FC<HomeType> = ({ isHome, setIsHome }) => {
   const [isRotating, setIsRotating] = useState(false);
 
   useEffect(() => {
-    if (!isHome) setIsHome(true);
+    if (!isHome) setIsHome(true); 
   }, [isHome, setIsHome]);
-
+  
   const lighting = useSceneLighting(isDark);
   const { biplaneScale, biplanePosition, islandScale, islandPosition } = useScreenAdjustments();
 

@@ -19,7 +19,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, links }: MobileNavPr
   if (!isMobileMenuOpen || !portalRoot) {
     return null;
   }
-  console.log(links)
+  
   // 2. The component to be rendered by the portal
   const mobileMenuContent = (
     <AnimatePresence>

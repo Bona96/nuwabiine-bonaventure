@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import { CTA } from "../components/index.ts";
 import { arrow } from "../assets/icons/index.ts";
 import { projects } from "../constants/index.tsx";
+import { useEffect } from "react";
+import type { HomeType } from "../lib/types.ts";
 
-const Portfolio = () => {
+const Portfolio: React.FC<HomeType> = ({ isHome, setIsHome }) => {
+
   const porttextColor = "text-slate-800 dark:text-slate-200/70";
   const portlinkColor = "text-cyan-800/80 dark:text-cyan-200/90";
+
+  useEffect(() => {
+    if (isHome) setIsHome(false);
+  }, [isHome, setIsHome]);
 
   return (
     <section className="max-container min-h-screen py-16 px-4 text-gray-800 dark:text-gray-200 transition-colors duration-500 shadow-2xl rounded-3xl">

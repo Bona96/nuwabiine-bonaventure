@@ -7,11 +7,12 @@ type FooterProps = {
 };
 
 const Footer: React.FC<FooterProps> = ({ isHome }) => {
+  console.log("isHome in Footer:", isHome);
   return (
     <footer
       className={`${
         isHome ? "z-99 fixed bottom-0 left-0 right-0" : "mt-10"
-      } flex items-center justify-between gap-6 rounded border-2 border-cyan-500 hover:border-cyan-700 footer font-poppins p-2 md:p-4 lg:p-2 text-gray-800 dark:text-gray-200`}
+      } flex items-center justify-between gap-6 rounded border-2 border-cyan-500 hover:border-cyan-700 font-poppins p-2 md:p-4 lg:p-2 text-gray-800 dark:text-gray-200`}
     >
         <p className="text-center text-sm">
           © 2025 <strong>Nuwabiine Mbiine Bonaventure</strong>. All rights

@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext.tsx";
 import Modal from "../components/Modal";
 import { academics } from "../constants/index.tsx";
 import { ThemeToogle } from "../components/Buttons.tsx";
+import type { HomeType } from "../lib/types.ts";
 
 const excerpt = (text: string, len = 80) =>
   text.length > len ? text.slice(0, len) + "..." : text;
 
-const Academics = () => {
+const Academics: React.FC<HomeType> = ({ isHome, setIsHome }) => {
   const [view, setView] = useState("table");
   const [modalOpen, setModalOpen] = useState(false);
   const [selected, setSelected] = useState<typeof academics[0] | null>(null);
@@ -18,11 +19,14 @@ const Academics = () => {
     setModalOpen(true);
   };
 
+  useEffect(() => {
+    if (isHome) setIsHome(false);
+  }, [isHome, setIsHome]);
   return (
     <section
       className={`max-container p-4 bg-linear-to-br from-cyan-400 via-gray-300 to-cyan-400 dark:from-gray-800 dark:via-cyan-800 dark:to-gray-600 text-gray-800 dark:text-gray-200 transition-colors duration-500 rounded-3xl shadow-md ${theme.styles.accent} ${theme.styles.secondary}`}
     >
-      <div className="flex flex-row flex-wrap justify-between items-center gap-20 mb-8">
+      <div className="flex flex-row flex-wrap justify-between items-center gap-20 mt-20 mb-8">
         <h1 className="head-text text-center">
           Academics{" "}
           <span role="img" aria-label="books">

@@ -1,8 +1,14 @@
 import { CTA } from "../components/index.ts";
 import ExperienceCard from "../components/ExperienceCard.js";
 import { bio, experiences, skills } from "../constants/index.tsx";
+import type { HomeType } from "../lib/types.ts";
+import { useEffect } from "react";
 
-const About = () => {
+const About: React.FC<HomeType> = ({ isHome, setIsHome }) => {
+
+  useEffect(() => {
+    if (isHome) setIsHome(false);
+  }, [isHome, setIsHome]);
   return (
     <section className="flex flex-col p-20 text-left w-full  text-gray-800 dark:text-gray-200 transition-colors duration-500">
       <h1 className="text-xl">

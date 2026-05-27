@@ -1,18 +1,19 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 import { FORM_FIELDS } from "../constants";
+import type { HomeType } from "../lib/types";
 
 const INITIAL_FORM = FORM_FIELDS.reduce<Record<string, string>>((acc, field) => {
   acc[field.name] = "";
   return acc;
 }, {});
 
-const Contact = () => {
+const Contact: React.FC<HomeType> = ({ isHome, setIsHome }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState<Record<string, string>>(INITIAL_FORM);
   const { alert, showAlert, hideAlert } = useAlert();
@@ -78,6 +79,9 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    if (isHome) setIsHome(false);
+  }, [isHome, setIsHome]);
   return (
     <section className="relative flex lg:flex-row flex-col max-container bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-500">
       {/* Form Section */}
