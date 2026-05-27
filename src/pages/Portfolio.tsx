@@ -16,7 +16,7 @@ const Portfolio: React.FC<HomeType> = ({ isHome, setIsHome }) => {
 
   return (
     <section className="max-container min-h-screen py-16 px-4 text-gray-800 dark:text-gray-200 transition-colors duration-500 shadow-2xl rounded-3xl">
-      <h1 className="head-text mb-4">
+      <h1 className="head-text mb-4 mt-20">
         Live{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
           Projects

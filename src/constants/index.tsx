@@ -334,31 +334,47 @@ export const projects = [
     theme: "btn-back-pink",
     name: "Candy K Luxe Cosmetics",
     description:
-      "An Ecommerce website for Candy K Luxe Cosmetics, a beauty company in Uganda, showcasing their products and retailing services, facilitating user engagement and online sales.",
+      "A sophisticated e-commerce storefront for Candy Kluxe Cosmetics, crafted to showcase premium beauty products and deliver a seamless, high-end shopping experience.",
     link: "https://candykluxecosmetics.vercel.app/",
   },
   {
-    iconUrl: Slisuganda,
+    iconUrl: AnitaKitchen,
     theme: "btn-back-yellow",
-    name: "SLIS uganda",
+    name: "Anita's Kitchen",
     description:
-      "A wordpress website for SLIS Uganda, showcasing their services and facilitating user engagement in the digital space",
-    link: "https://slisuganda.org/",
+      "An inviting digital interface for Anita’s Kitchen, highlighting their culinary offerings and streamlining the customer ordering process.",
+    link: "https://anita-s-kitchen.vercel.app/",
+  },
+  {
+    iconUrl: KnihtdigitalSolutions,
+    theme: "btn-back-yellow",
+    name: "KNiHT Digital Solutions",
+    description:
+      "A modern, high-performance portfolio site for KNiHT Digital Solutions, showcasing innovative tech services and a commitment to digital excellence.",
+    link: "https://knihtdigitalsolutions.vercel.app/",
   },
   {
     iconUrl: MarlanUnisex,
     theme: "btn-back-yellow",
     name: "Marlan's Unisex Beauty Salon",
     description:
-      "A one page site for Marlan's Unisex Beauty Salon, a salon in Uganda, showcasing their services and facilitating user engagement in the digital space",
+      "An elegant, user-friendly booking and showcase platform for Marlan’s Unisex Beauty Salon, designed to elevate the brand and simplify the client experience.",
     link: "https://marlan-sunisexbeautysalon.vercel.app/",
+  },
+  {
+    iconUrl: Slisuganda,
+    theme: "btn-back-yellow",
+    name: "SLIS uganda",
+    description:
+      "A digital ecosystem for SLIS Uganda, meticulously crafted to showcase their commitment to change and to provide an interactive space for community action and collaboration.",
+    link: "https://slisuganda.org/",
   },
   {
     iconUrl: TamiUganda,
     theme: "btn-back-green",
     name: "TAMI Uganda",
     description:
-      "Developed a wordpress website for the Transafrican Management Institute (TAMI) in Uganda, showcasing their services and facilitating user engagement in the digital space",
+      "A comprehensive educational hub for TAMI Uganda, facilitating access to professional management training and fostering organizational excellence across Africa.",
     link: "https://tamiuganda.org/",
   },
   {
@@ -366,7 +382,7 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "GN Associates",
     description:
-      "Developed a wordpress website for GN Associates, a finance company in Uganda, to enhance their online presence and attract potential clients.",
+      "A professional digital presence for GN Associates, highlighting their expertise in financial risk management, corporate governance, and strategic advisory services for institutional growth and sustainability.",
     link: "https://gnassociatesug.com/",
   },
   {
@@ -374,32 +390,15 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "STAWI Hope of Africa",
     description:
-      "Developed a wordpress website for STAWI, an NGO in Uganda, to enhance their online presence and attract potential clients.",
+      "A compelling digital platform for Stawi Hope of Africa, dedicated to showcasing their community-led initiatives in child development, sustainable agriculture, and holistic empowerment.",
     link: "https://stawihopeofafrica.org/",
-  },
-  {
-    iconUrl: KnihtdigitalSolutions,
-    theme: "btn-back-yellow",
-    name: "KNiHT Digital Solutions",
-    description:
-      "Currently developing a web application, for KNIHT Digital School. Meant to extend the learning experience to the online space.",
-    link: "https://knihtdigitalsolutions.vercel.app/",
-  },
-  {
-    iconUrl: AnitaKitchen,
-    theme: "btn-back-yellow",
-    name: "Anita's Kitchen",
-    description:
-      "A one page site for Anita's Kitchen, a catering company in Uganda, showcasing their services and facilitating user engagement in the digital space",
-    link: "https://anita-s-kitchen.vercel.app/",
-  },
-  
+  },  
   {
     iconUrl: MigaddeCatholicParish,
     theme: "btn-back-pink",
     name: "Migadde Catholic Parish",
     description:
-      "A wordpress website for Migadde Catholic Parish, a church in Uganda, showcasing their services and facilitating user engagement in the digital space",
+      "A welcoming digital home for Migadde Catholic Parish, serving as a vital communication bridge for parish events, liturgical schedules, and community outreach.",
     link: "https://migaddecatholicparish.org/",
   },
 ];
