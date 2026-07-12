@@ -76,15 +76,14 @@ export const bio: Bio = {
     first: "Nuwabiine",
     last: "Bonaventure",
   },
-  title: "A Fullstack Developer",
+  title: "A Fullstack WebDeveloper",
   subtitle: "Mobile, Web & Software  Development",
   description: `
-    Fullstack Developer & Product Engineer specializing in Next.js, React Native, and Node.js. I
-    transform complex business requirements into high-performance digital products, from type-safe
-    database architectures with Prisma to immersive 3D web experiences using Three.js. With a
-    background spanning both software development and secure server administration, I offer a holistic
-    approach to the modern web. Enthusiast for Machine Learning and Quantum Computing,
-    always looking to apply emerging technologies to solve real-world problems.
+    I’m a Full Stack & Product Engineer focused on architecting, securing, and deploying high-performance web and mobile applications.
+
+    I own the entire development lifecycle. On the client side, I build with React, Next.js, React Native, and Three.js. On the backend, I write clean Node.js services, optimize data pipelines using Prisma and PostgreSQL, and supercharge performance with Redis caching and monorepo architectures.
+
+    Because I back my development work with a deep interest in cybersecurity and machine learning, the systems I deploy to Vercel and Railway aren’t just fast—they are secure, resilient, and built to scale.
   `,
   email: "mnuwabiine@gmail.com",
   phone: "+256 760 420 592",
