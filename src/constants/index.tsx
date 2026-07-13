@@ -1,4 +1,4 @@
-import { AnitaKitchen, CandyKProject, GNAssociates, KnihtdigitalSolutions, KnihtLogo, MarlanUnisex, MigaddeCatholicParish, reactessntialscertificateImg, Slisuganda, Stawi, TamiUganda } from "../assets/images/index";
+import { AnitaKitchen, CandyKProject, GNAssociates, KnihtdigitalSolutions, KnihtLogo, MarlanUnisex, MigaddeCatholicParish, reactessntialscertificateImg, Slisuganda, Stawi } from "../assets/images/index";
 import {
   contact,
   css,
