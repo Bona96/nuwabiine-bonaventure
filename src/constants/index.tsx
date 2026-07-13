@@ -251,57 +251,6 @@ export const experiences = [
       "Implemented API integrations that streamlined data flow between frontend and backend services.",
     ],
   },
-
-  {
-    title: "Web & Software Developer",
-    company_name: "Billbrain Technologies",
-    icon: react,
-    iconBg: "#fbc3bc",
-    date: "Oct 2022 - July 2023",
-    points: [
-      ` System Integrity: Conducted rigorous performance monitoring and testing of
-        enterprise web applications, ensuring high availability and robust data
-        confidentiality.
-      `,
-      ` Maintenance & Optimization: Maintained a suite of legacy and modern websites
-        (PHP/WordPress/JavaScript), implementing performance patches that improved
-        page load speeds
-      `,
-      ` Compliance: Audited internal systems to ensure data integrity and security
-        protocols were consistently met across all company digital assets.
-      `,
-    ],
-  },
-  {
-    title: "Website Developer",
-    company_name: "EVOTech",
-    icon: html,
-    iconBg: "#accbe1",
-    date: "Jan 2022 - July 2022",
-    points: [
-      `
-        Server Administration: Managed cPanel server environments and provided core
-        technical support for the OSLIS Africa school management system, ensuring
-        seamless service delivery.
-
-      `,
-      `
-        Process Automation: Spearheaded automation initiatives for financial workflows,
-        specifically developing tools for credit disbursement that reduced manual
-        processing time
-      `,
-      `
-        Disaster Recovery & Monitoring: Proactively diagnosed and resolved server-side
-        issues, optimizing system uptime and establishing reliable backup/restoration
-        routines
-      `,
-      `
-        Agile Collaboration: Worked within an agile framework to facilitate rapid product
-        releases and upgrades, acting as the bridge between development and system
-        operations.
-      `,
-    ],
-  },
 ];
 
 export const socialLinks = [
@@ -367,14 +316,6 @@ export const projects = [
     description:
       "A digital ecosystem for SLIS Uganda, meticulously crafted to showcase their commitment to change and to provide an interactive space for community action and collaboration.",
     link: "https://slisuganda.org/",
-  },
-  {
-    iconUrl: TamiUganda,
-    theme: "btn-back-green",
-    name: "TAMI Uganda",
-    description:
-      "A comprehensive educational hub for TAMI Uganda, facilitating access to professional management training and fostering organizational excellence across Africa.",
-    link: "https://tamiuganda.org/",
   },
   {
     iconUrl: GNAssociates,
