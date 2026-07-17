@@ -79,11 +79,11 @@ export const bio: Bio = {
   title: "A Fullstack WebDeveloper",
   subtitle: "Mobile, Web & Software  Development",
   description: `
-    I’m a Full Stack & Product Engineer focused on architecting, securing, and deploying high-performance web and mobile applications.
+    Nuwabiine is a Full Stack & Product Engineer focused on architecting, securing, and deploying high-performance web and mobile applications.
 
     I own the entire development lifecycle. On the client side, I build with React, Next.js, React Native, and Three.js. On the backend, I write clean Node.js services, optimize data pipelines using Prisma and PostgreSQL, and supercharge performance with Redis caching and monorepo architectures.
 
-    Because I back my development work with a deep interest in cybersecurity and machine learning, the systems I deploy to Vercel and Railway aren’t just fast—they are secure, resilient, and built to scale.
+    Because I back my development work with a deep commitment to cybersecurity, machine learning, and quantum computing research, the systems I deploy to Vercel and Railway aren’t just fast—they are forward-compatible, resilient, and built for the next paradigm of technology.
   `,
   email: "mnuwabiine@gmail.com",
   phone: "+256 760 420 592",
