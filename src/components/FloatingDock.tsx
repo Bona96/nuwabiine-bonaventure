@@ -1,7 +1,7 @@
 import { FloatingDock } from "./ui/floating-dock.tsx";
 import {
   IconBrandGithub,
-  IconBrandX,
+  IconBrandLinkedin,
   IconHome,
   IconBook,
   IconUser,
@@ -49,11 +49,11 @@ export function FloatingDockComponent() {
     },
  
     {
-      title: "Twitter",
+      title: "LinkedIn",
       icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://x.com/nuwabiinembiine",
+      href: "https://linkedin.com/in/nuwabiine-bonaventure",
     },
     {
       title: "GitHub",
