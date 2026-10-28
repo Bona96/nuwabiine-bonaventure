@@ -137,7 +137,8 @@ export const academics = [
 export const skills = [
   { imageUrl: cybersecurity, name: "Cybersecurity", type: "Security" },
   { imageUrl: express, name: "Express", type: "Backend" },
-  { imageUrl: git, name: "Git", type: "" },
+  { imageUrl: git, name: "Git", type: "Version Control" },
+  { imageUrl: github, name: "GitHub", type: "Version Control" },
   { imageUrl: html, name: "HTML 5", type: "Frontend" },
   { imageUrl: javascript, name: "JavaScript (ES6+)", type: "Languages & Web" },
   { imageUrl: linux, name: "Linux", type: "Infrastructure" },
