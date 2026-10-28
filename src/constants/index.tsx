@@ -1,16 +1,19 @@
-import { AnitaKitchen, CandyKProject, GNAssociates, KnihtdigitalSolutions, KnihtLogo, MarlanUnisex, MigaddeCatholicParish, reactessntialscertificateImg, Slisuganda, Stawi } from "../assets/images/index";
+import { AegisAI, AnitaKitchen, CandyKProject, GNAssociates, KnihtdigitalSolutions, KnihtLogo, MarlanUnisex, MigaddeCatholicParish, reactessntialscertificateImg, Slisuganda, Stawi } from "../assets/images/index";
 import {
   contact,
-  css,
+  cybersecurity,
   express,
   git,
   github,
   html,
   javascript,
   linkedin,
+  linux,
   mui,
   nextjs,
   nodejs,
+  postgresSQL,
+  quantum,
   react,
   tailwindcss,
   typescript,
@@ -22,6 +25,7 @@ import heroImg from "../assets/images/hero.jpg";
 import metaImg from "../assets/images/meta.png";
 
 import { Briefcase, Mail, User } from "lucide-react";
+
 // @ts-ignore
 import sakura from "../assets/music/sakura.mp3";
 // @ts-ignore
@@ -29,9 +33,7 @@ import onecallaway from "../assets/music/onecallaway.mp3";
 
 import type { Bio, StageContentType, ThemeType } from "../lib/types";
 
-
-//Home hero section
-// Define the content and structure for each stage
+// Home hero section
 export const STAGE_CONTENT: Record<number, StageContentType> = {
   1: {
     title: (
@@ -40,32 +42,32 @@ export const STAGE_CONTENT: Record<number, StageContentType> = {
         <br />
       </>
     ),
-    paragraph: "A Fullstack Web & Mobile Developer - Proud to be Ugandan",
+    paragraph: "Full-Stack Engineer · Security & DevOps · Post-Quantum Cryptography Researcher",
   },
   2: {
     paragraph:
-      "It has been a very exciting journey learning and building my skills as a developer. Want to know more about me?",
+      "Building, deploying, and securing production web platforms end-to-end—from database schema to hardened server. Want to know more about me?",
     link: {
       to: "/about",
       label: "Learn more...",
-      icon: User, // Lucide User icon
+      icon: User,
     },
   },
   3: {
-    paragraph: "Interested in seeing some of my work and projects?",
+    paragraph: "Interested in seeing my production apps, client platforms, and security research?",
     link: {
       to: "/portfolio",
       label: "Visit my portfolio",
-      icon: Briefcase, // Lucide Briefcase icon
+      icon: Briefcase,
     },
   },
   4: {
     paragraph:
-      "Get in touch with me for collaborations, projects, or just to say hi!",
+      "Get in touch with me for collaborations, security audits, software engineering projects, or just to say hi!",
     link: {
       to: "/contact",
       label: "Let's talk",
-      icon: Mail, // Lucide Mail icon
+      icon: Mail,
     },
   },
 };
@@ -76,14 +78,12 @@ export const bio: Bio = {
     first: "Nuwabiine",
     last: "Bonaventure",
   },
-  title: "A Fullstack WebDeveloper",
-  subtitle: "Mobile, Web & Software  Development",
+  title: "Full-Stack Engineer & PQC Researcher",
+  subtitle: "Security, DevOps & High-Performance Web Systems",
   description: `
-    Nuwabiine is a Full Stack & Product Engineer focused on architecting, securing, and deploying high-performance web and mobile applications.
+    Full-stack JavaScript engineer and M.Sc. Cybersecurity & Digital Forensics candidate (Year 1 CGPA 4.8) who builds, deploys, and secures production web platforms end to end, from database schema to hardened server. Founder of KNiHT Digital Solutions, with live platforms serving e-commerce, NGO, hospitality, and faith-community clients. 
 
-    I own the entire development lifecycle. On the client side, I build with React, Next.js, React Native, and Three.js. On the backend, I write clean Node.js services, optimize data pipelines using Prisma and PostgreSQL, and supercharge performance with Redis caching and monorepo architectures.
-
-    Because I back my development work with a deep commitment to cybersecurity, machine learning, and quantum computing research, the systems I deploy to Vercel and Railway aren’t just fast—they are forward-compatible, resilient, and built for the next paradigm of technology.
+    Applies Linux hardening, incident response, and audit practice to every system under management. Active research focus in post-quantum cryptography for tamper-evident digital evidence, featuring open-source projects like pqdf-core (Rust/Node.js/gRPC with NIST ML-DSA & ML-KEM) and AegisVault AI (zero-trust quantum-aware dApp).
   `,
   email: "mnuwabiine@gmail.com",
   phone: "+256 760 420 592",
@@ -92,163 +92,110 @@ export const bio: Bio = {
     country: "Uganda",
   },
 };
-// Academics
+
+// Academics & Certifications
 export const academics = [
   {
-    title: "Masters of Science in Cybersecurity & Digital Forensics",
-    institution: "Uganda Christian University - Mukono Campus",
+    title: "M.Sc. Cybersecurity and Digital Forensics",
+    institution: "Uganda Christian University (Faculty of Engineering, Design and Technology)",
     description:
-      "Currently pursuing a master's degree in cybersecurity and digital forensics. Gaining advanced knowledge in securing digital assets, investigating cybercrimes, and implementing robust security measures to protect information systems.",
+      "Year 1 complete with a CGPA of 4.8. Coursework covers Security Governance & Compliance, Digital Forensic Analysis & Cybercrime Investigations, Cybersecurity Audit & Risk Management, Security Monitoring & Incident Response, Advanced Ethical Hacking & Penetration Testing, and Cybersecurity Research Methods.",
     image: heroImg,
     link: "https://ucu.ac.ug/",
-    // pdf: "/pdfs/transcript.pdf",
-    year: "2026",
+    year: "2026 – Present",
   },
   {
-    title: "Computational Thinking Course",
-    institution: "University of Pennsylvania - Coursera",
+    title: "B.Sc. Information Technology",
+    institution: "Uganda Martyrs University",
     description:
-      "Completed a course on computational thinking. Learned computational problem solving skills.",
-    image: metaImg,
-    link: "https://www.coursera.org/learn/machine-learning",
-    pdf: "/pdfs/transcript.pdf",
-    year: "2023",
+      "Graduated with Second Class Honors (Lower Division). Coursework included Information Security, Operating Systems, Data Communication & Networks, System Administration, Database Management Systems, Web-based Systems Programming, and Data Structures & Algorithms.",
+    image: heroImg,
+    link: "https://umu.ac.ug/",
+    year: "2016 – 2022",
   },
   {
-    title: "React Esentials Professional Certificate",
+    title: "React Essentials Professional Certificate",
     institution: "LinkedIn Learning",
     description:
-      "In this course, software developer and instructor Eve Porcello highlights the latest techniques for building a React app from scratch. Learn how to create elements, write components, and use React hooks. Get familiar with libraries like Next and Vite, and discover the differences between React Server Components and Client Components. Find out how to use the latest tools, techniques, and patterns that will help futureproof applications and make them more scalable and performant. After watching the course, you will be able to start your own project from scratch, and you will also be able to jump into an existing React codebase and make an impact.",
+      "Highlighted modern techniques for building React applications from scratch, utilizing components, hooks, Next.js, Vite, and React Server Components for scalable, performant architecture.",
     image: reactessntialscertificateImg,
     link: "https://www.linkedin.com/learning/certificates/2722e251fced4147ecb83a594c7ca502a86462f11bafe32aca19668aa50adc1c?trk=share_certificate",
     pdf: "/pdfs/react-essentials-training.pdf",
-    year: "2025",
+    year: "Oct 2025",
   },
   {
-    title: "Bachelor's Degree in Information & Communication Technology",
-    institution: "Uganda Martyrs University - Nkozi Campus",
+    title: "Computational Thinking for Problem Solving",
+    institution: "University of Pennsylvania / Coursera",
     description:
-      "Graduated with 2nd class. Then focused and specialised in Web and Mobile Application development, Graphics desgin with canva and Website development with WordPress, PHP, PhpMyAdmin, MySQL and cPanel. I also understand AI concepts and know my way around designing models with python.",
-    image: heroImg,
-    link: "https://umu.ac.ug//",
-    pdf: "/pdfs/transcript.pdf",
-    year: "2016 - 2022",
-  },  
+      "Completed rigorous foundational training in computational thinking and algorithmic problem-solving methodologies.",
+    image: metaImg,
+    link: "https://www.coursera.org/",
+    year: "Mar 2023",
+  },
 ];
 
 // Skills
 export const skills = [
-  {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
-  },
-  {
-    imageUrl: css,
-    name: "CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Fullstack",
-  },
-  {
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
-  },
-  {
-    imageUrl: mui,
-    name: "Material-UI",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-  },
-  {
-    imageUrl: express,
-    name: "Express",
-    type: "Backend",
-  },
-  {
-    imageUrl: git,
-    name: "Git",
-    type: "Version Control",
-  },
-  {
-    imageUrl: github,
-    name: "GitHub",
-    type: "Version Control",
-  },
+  { imageUrl: cybersecurity, name: "Cybersecurity", type: "Security" },
+  { imageUrl: express, name: "Express", type: "Backend" },
+  { imageUrl: javascript, name: "JavaScript (ES6+)", type: "Languages & Web" },
+  { imageUrl: linux, name: "Linux", type: "Infrastructure" },
+  { imageUrl: nextjs, name: "Next.js", type: "Frontend" },
+  { imageUrl: nodejs, name: "Node.js", type: "Backend" },
+  { imageUrl: postgresSQL, name: "PostgreSQL", type: "Database" },
+  { imageUrl: quantum, name: "Post-Quantum Cryptography", type: "Research" },
+  { imageUrl: react, name: "React", type: "Frontend" },
+  { imageUrl: tailwindcss, name: "Tailwind CSS", type: "Frontend" },
+  { imageUrl: typescript, name: "TypeScript", type: "Languages & Web" },
 ];
 
+// Work Experience
 export const experiences = [
   {
-    title: "Full Stack Developer",
-    company_name: "KNIHT Digital Solutions",
+    title: "Founder, Full-Stack Developer & Server Administrator",
+    company_name: "KNiHT Digital Solutions, Uganda",
     icon: KnihtLogo,
     iconBg: "#a2d2fd",
-    date: "Sept 2025 - Present",
+    date: "Oct 2023 – Present",
     points: [
-      `
-        Product Architecture: Architected and deployed high-performance web and mobile
-        applications using Next.js, React Native, and Node.js, focusing on SEO
-        optimization and cross-platform accessibility.
-      `,
-      `
-        Database & Cloud Orchestration: Managed complex data layers using Prisma
-        ORM with Neon Serverless PostgreSQL and MySQL, ensuring type-safety and
-        efficient data migrations.
-      `,
-      `
-        Infrastructure Management: Streamlined deployment pipelines across Vercel,
-        Railway, and cPanel, maintaining 99.9% uptime for a diverse portfolio of client
-        projects (including TAMI Uganda and AMDA).
-      `,
-      `
-        3D Web Development: Engineered immersive user interfaces using Three.js,
-        pushing the boundaries of traditional web design to increase user engagement.
-      `,
-      `
-        Hardened platform security by implementing Wordfence in websites
-        deployed on cpanel server, http security using axios interceptors and 
-        cors for server-side implementation using Node.js on webapps,
-        while conducting penetration testing via Kali Linux.
-      `,
-      `
-        Spearheaded the design language for the brand using Canva 
-        and ensured pixel-perfect responsive implementation.
-      `,
+      "Founded and run a development practice that has shipped 7+ production platforms across e-commerce, hospitality, NGO, and faith-community sectors, owning each from first commit through hosting, security, and uptime.",
+      "Full-stack JavaScript delivery: Next.js (SSR) frontends, Node.js/Express APIs, and Prisma with PostgreSQL/MySQL (e.g., Candy.K Luxe Cosmetics and KNiHT agency site with Three.js).",
+      "CI/CD automation: Vercel pipelines deploying main branches in under 2 minutes with automated Prisma migrations; cPanel deployments via Git hooks and CLI scripts.",
+      "Linux & Server Administration: cPanel/Linux hosting management, file-permission hardening, user/group access control, HTTP-to-HTTPS redirects, SSL renewals, and WP-CLI cron automation.",
+      "Monitoring & Incident Response: Tracking server health, Vercel analytics, and uptime alerts; rapidly resolving failed deployments, DB drops, and DNS issues.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Kniht Technologies",
-    icon: react,
+    title: "Embedded ICT & Server Administrator",
+    company_name: "TAMI Uganda",
+    icon: KnihtLogo,
     iconBg: "#b7e4c7",
-    date: "Nov 2023 - Aug 2025",
+    date: "Oct 2023 – Jun 2026",
     points: [
-      "Built scalable web applications utilizing the JavaScript ecosystem to deliver seamless user experiences.",
-      "Bridged the gap between design and development by using Canva to create high-fidelity assets and marketing graphics.",
-      "Implemented API integrations that streamlined data flow between frontend and backend services.",
+      "Revamped enterprise site infrastructure (WooCommerce, DNS, cPanel hardening), significantly improving page load speeds and Core Web Vitals.",
+    ],
+  },
+  {
+    title: "Web & Software Developer",
+    company_name: "Billbrain Technologies",
+    icon: react,
+    iconBg: "#ffe5ec",
+    date: "Oct 2022 – Jul 2023",
+    points: [
+      "Monitored and tested enterprise web applications for availability and data confidentiality; audited internal systems for data integrity and security compliance.",
+      "Maintained and patched legacy and modern PHP, WordPress, and JavaScript systems to boost performance.",
+    ],
+  },
+  {
+    title: "Systems Administrator & Developer",
+    company_name: "EVOTECH Uganda Limited",
+    icon: react,
+    iconBg: "#e2ece9",
+    date: "Jan 2022 – Jul 2022",
+    points: [
+      "Administered cPanel servers and provided technical support for the OSLIS Africa school management system.",
+      "Built automation tools for financial workflows (credit disbursement), reducing manual processing time.",
+      "Diagnosed server-side issues, established backup/restoration routines, and worked in Agile release teams.",
     ],
   },
 ];
@@ -262,7 +209,7 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/Bona96",
+    link: "https://github.com/bona96",
   },
   {
     name: "LinkedIn",
@@ -276,29 +223,38 @@ export const socialLinks = [
   },
 ];
 
+// Projects (Including Production Apps & PQC Research)
 export const projects = [
+  {
+    iconUrl: CandyKProject,
+    theme: "btn-back-pink",
+    name: "pqdf-core (Research)",
+    description:
+      "Open-source post-quantum digital forensics platform in Rust & Node.js/gRPC. Replaces RSA/ECDSA with NIST-standardized ML-DSA and ML-KEM to counter Harvest-Now-Decrypt-Later attacks.",
+    link: "https://github.com/bona96/pqdf-core",
+  },
+  {
+    iconUrl: AegisAI,
+    theme: "btn-back-yellow",
+    name: "AegisVault AI (Research)",
+    description:
+      "Zero-trust, quantum-aware browser dApp featuring local key derivation (PBKDF2/AES-GCM), WOTS+ hybrid transaction signing, Ring-LWE key encapsulation, and a Solidity static analyzer.",
+    link: "https://bona96.github.io/aegisvault-ai/",
+  },
   {
     iconUrl: CandyKProject,
     theme: "btn-back-pink",
     name: "Candy K Luxe Cosmetics",
     description:
-      "A sophisticated e-commerce storefront for Candy Kluxe Cosmetics, crafted to showcase premium beauty products and deliver a seamless, high-end shopping experience.",
+      "A sophisticated e-commerce storefront with cart, orders, reviews, serverless order notifications, and media uploads built with Next.js, Node.js, Prisma, and PostgreSQL.",
     link: "https://candykluxecosmetics.vercel.app/",
-  },
-  {
-    iconUrl: AnitaKitchen,
-    theme: "btn-back-yellow",
-    name: "Anita's Kitchen",
-    description:
-      "An inviting digital interface for Anita’s Kitchen, highlighting their culinary offerings and streamlining the customer ordering process.",
-    link: "https://anita-s-kitchen.vercel.app/",
   },
   {
     iconUrl: KnihtdigitalSolutions,
     theme: "btn-back-yellow",
     name: "KNiHT Digital Solutions",
     description:
-      "A modern, high-performance portfolio site for KNiHT Digital Solutions, showcasing innovative tech services and a commitment to digital excellence.",
+      "A modern, high-performance agency portfolio featuring a Three.js 3D interactive interface built with Next.js and Tailwind CSS.",
     link: "https://knihtdigitalsolutions.vercel.app/",
   },
   {
@@ -306,15 +262,39 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "Marlan's Unisex Beauty Salon",
     description:
-      "An elegant, user-friendly booking and showcase platform for Marlan’s Unisex Beauty Salon, designed to elevate the brand and simplify the client experience.",
+      "An elegant booking and showcase platform designed to elevate the salon's brand and simplify client appointments.",
     link: "https://marlan-sunisexbeautysalon.vercel.app/",
+  },
+  {
+    iconUrl: AnitaKitchen,
+    theme: "btn-back-yellow",
+    name: "Anita's Kitchen",
+    description:
+      "An inviting digital interface highlighting culinary offerings and streamlining the customer ordering process.",
+    link: "https://anita-s-kitchen.vercel.app/",
+  },
+  {
+    iconUrl: MigaddeCatholicParish,
+    theme: "btn-back-pink",
+    name: "St Achileo Kiwanuka Catholic Parish",
+    description:
+      "Bilingual (English/Luganda) parish portal hosted on cPanel/Linux with SSL security, event management, and online donations.",
+    link: "https://migaddecatholicparish.com",
+  },
+  {
+    iconUrl: Stawi,
+    theme: "btn-back-yellow",
+    name: "Stawi Hope of Africa",
+    description:
+      "NGO platform dedicated to showcasing community-led child development and sustainable agriculture initiatives.",
+    link: "https://stawihopeofafrica.org/",
   },
   {
     iconUrl: Slisuganda,
     theme: "btn-back-yellow",
-    name: "SLIS uganda",
+    name: "SLIS Uganda",
     description:
-      "A digital ecosystem for SLIS Uganda, meticulously crafted to showcase their commitment to change and to provide an interactive space for community action and collaboration.",
+      "Interactive digital ecosystem for community action, institutional collaboration, and change initiatives.",
     link: "https://slisuganda.org/",
   },
   {
@@ -322,24 +302,8 @@ export const projects = [
     theme: "btn-back-yellow",
     name: "GN Associates",
     description:
-      "A professional digital presence for GN Associates, highlighting their expertise in financial risk management, corporate governance, and strategic advisory services for institutional growth and sustainability.",
+      "Professional digital presence highlighting expertise in financial risk management, corporate governance, and strategic advisory services.",
     link: "https://gnassociatesug.com/",
-  },
-  {
-    iconUrl: Stawi,
-    theme: "btn-back-yellow",
-    name: "STAWI Hope of Africa",
-    description:
-      "A compelling digital platform for Stawi Hope of Africa, dedicated to showcasing their community-led initiatives in child development, sustainable agriculture, and holistic empowerment.",
-    link: "https://stawihopeofafrica.org/",
-  },  
-  {
-    iconUrl: MigaddeCatholicParish,
-    theme: "btn-back-pink",
-    name: "Migadde Catholic Parish",
-    description:
-      "A welcoming digital home for Migadde Catholic Parish, serving as a vital communication bridge for parish events, liturgical schedules, and community outreach.",
-    link: "https://migaddecatholicparish.org/",
   },
 ];
 
@@ -365,54 +329,13 @@ export const themes: ThemeType[] = [
       excerpt: "text-slate-500 dark:text-slate-400",
     },
   },
-  {
-    id: 2,
-    name: "themeOne",
-    styles: {
-      primary: "bg-purple-600 text-white",
-      secondary:
-        "bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-300",
-      accent: "bg-purple-200/50 dark:bg-gray-800/50",
-      border: "border-purple-100 dark:border-purple-900",
-      card: "rounded-2xl shadow-xl p-6",
-      button:
-        "px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200",
-      link: "text-purple-700 dark:text-purple-300 underline hover:text-purple-500",
-      tableHead:
-        "bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300",
-      tableRow:
-        "border-t border-purple-100 dark:border-purple-900 hover:bg-purple-50 dark:hover:bg-purple-950",
-      excerpt: "text-slate-500 dark:text-slate-400",
-    },
-  },
-  {
-    id: 3,
-    name: "themeTwo",
-    styles: {
-      primary: "bg-green-600 text-white",
-      secondary: "bg-white dark:bg-gray-900 text-green-600 dark:text-green-300",
-      accent: "bg-green-200/50 dark:bg-gray-800/50",
-      border: "border-green-100 dark:border-green-900",
-      card: "rounded-2xl shadow-xl p-6",
-      button:
-        "px-6 py-2 rounded-lg font-semibold shadow transition-colors duration-200",
-      link: "text-green-700 dark:text-green-300 underline hover:text-green-500",
-      tableHead:
-        "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300",
-      tableRow:
-        "border-t border-green-100 dark:border-green-900 hover:bg-green-50 dark:hover:bg-green-950",
-      excerpt: "text-slate-500 dark:text-slate-400",
-    },
-  },
 ];
 
 export const SONGS = [
   { label: "One call", value: onecallaway },
   { label: "Sakura", value: sakura },
-  // Add more songs here, e.g. { label: "Another Song", value: anotherSong }
 ];
 
-// Configurable form fields for reusability
 export const FORM_FIELDS = [
   {
     name: "name",

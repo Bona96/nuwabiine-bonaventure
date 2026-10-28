@@ -48,14 +48,14 @@ const About: React.FC<HomeType> = ({ isHome, setIsHome }) => {
               className="block-container w-32.5 h-32.5"
               key={skill.name}
             >
-              <div className="btn-back rounded-xl drop-shadow-xl drop-shadow-cyan-600 dark:drop-shadow-cyan-200" />
+              <div className="btn-back rounded-xl drop-shadow-xl drop-shadow-cyan-200 dark:drop-shadow-cyan-600" />
               <div className="btn-front p-2 rounded-xl flex flex-col justify-center items-center">
                 <img
                   src={skill.imageUrl}
                   alt={skill.name}
                   className="w-1/2 h-1/2 object-contain mt-3"
                 />
-                <p className="text-gray-800  dark:text-gray-200 text-sm mt-2">
+                <p className="text-gray-800 text-center dark:text-gray-200 text-sm mt-2">
                   {skill.name}
                 </p>
                 <p className="text-gray-800 dark:text-gray-200 text-[10px] mt-2 mb-2">

@@ -1,14 +1,18 @@
 import css from './css.svg'
+import cybersecurity from './cybersecurity.svg'
 import express from './express.svg'
 import git from './git.svg'
 import github from './github.svg'
 import html from './html.svg'
 import javascript from './javascript.svg'
+import linux from './linux.svg'
 import mongodb from './mongodb.svg'
 import motion from './motion.svg'
 import mui from './mui.svg'
 import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg'
+import postgresSQL from './postgresSQL.svg'
+import quantum from './quantum.svg'
 import react from './react.svg'
 import redux from './redux.svg'
 import sass from './sass.svg'
@@ -31,16 +35,20 @@ import youtube from './youtube.svg'
 
 export {
     css,
+    cybersecurity,
     express,
     git,
     github,
     html,
     javascript,
+    linux,
     mongodb,
     motion,
     mui,
     nextjs,
     nodejs,
+    postgresSQL,
+    quantum,
     react,
     redux,
     sass,
